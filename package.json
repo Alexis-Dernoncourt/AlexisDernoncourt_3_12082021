@@ -1,0 +1,22 @@
+{
+  "name": "ohmyfood_p3_ocr",
+  "version": "1.0.0",
+  "description": "Projet 2 formation OCR",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alexis-Dernoncourt/https---github.com-Alexis-Dernoncourt-AlexisDernoncourt_3_12082021.git"
+  },
+  "author": "Alexis Dernoncourt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alexis-Dernoncourt/https---github.com-Alexis-Dernoncourt-AlexisDernoncourt_3_12082021/issues"
+  },
+  "homepage": "https://github.com/Alexis-Dernoncourt/https---github.com-Alexis-Dernoncourt-AlexisDernoncourt_3_12082021#readme",
+  "dependencies": {
+    "sass": "^1.38.0"
+  }
+}
