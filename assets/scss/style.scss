@@ -3,14 +3,189 @@ $primary-color: #9356dc;
 $secondary-color: #ff79da;
 $tertiary-color: #99e2d0;
 
+$grey: #f0f0f0;
+$btn-gradient: linear-gradient(170deg, rgba(255,121,218,1)0%, rgba(147,86,220,1)100%);
+
 $main-font: 'Shrikhand', cursive;
-$secondary-font: 'Roboto', sans-serif;
+$secondary-font: 'Roboto';
 
 $card-radius: 20px;
 
 
 // Mixins:
+@mixin flexMid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+@mixin imgPosition {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@mixin btnColor {
+    display: block;
+    height: auto;
+    padding: 15px 30px;
+    margin: 30px 0;
+    max-width: 450px;
+    border-radius: 50px;
+    background: $btn-gradient;
+    box-shadow: 0px 6px 10px #ccc;
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+}
 
 // Général:
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: $secondary-font;
+}
+
+header {
+    @include flexMid;
+    padding: 20px 0 10px 0;
+    background-color: #fff;
+    box-shadow: 0 2px 5px #ccc;
+    z-index: 100;
+}
+
+.search-form {
+    @include flexMid;
+
+    form {
+        @include flexMid;
+        width: 100vw;
+        height: 50px;
+        padding: 10px;
+        background-color: darken($grey, 3%);
+        color: rgb(50, 50, 50);
+
+        label {
+            height: auto;
+            span {
+                position: absolute;
+                height: 1.25rem;
+                display: flex;
+                align-items: center;
+                margin-left: 8px;
+            }
+        }
+        input {
+            width: auto;
+            border: none;
+            background: transparent;
+        }
+        input[placeholder] {
+            color: rgb(0, 0, 0);
+            text-align: center;
+            font-size: 1rem;
+            height: 1.25rem;
+        }
+    }
+}
+
+.explore-restaurants-container {
+    @include flexMid;
+    flex-direction: column;
+    padding: 30px;
+    text-align: center;
+
+    > h1 {
+        font-weight: 700;
+        margin-bottom: 10px;
+        padding: 0 30px;
+    }
+
+    p {
+        font-weight: 300;
+        font-size: 1.05rem;
+    }
+
+    > a {
+        @include btnColor;
+    }
+}
+
+.how-it-works-container {
+    background-color: #fff;
+    padding: 50px 20px;
+
+    > .how-it-works-cards-container {
+        @include flexMid;
+        flex-direction: column;
+        gap: 10px;
+        margin: 20px 15px;
+
+        > a {
+            text-decoration: none;
+            width: 100%;
+            position: relative;
+            // @include flexMid;
+            // flex-direction: row;
+        }
+    }
+
+    .how-it-works-steps {
+        @include flexMid;
+        justify-content: unset;
+        // width: 100%;
+
+        > .circle {
+            width: 27px;
+            height: 27px;
+            background-color: $primary-color;
+            border-radius: 50%;
+            color: #fff;
+            font-size: 0.9rem;
+            @include flexMid;
+            position: absolute;
+            left: -15px;
+            z-index: 10;
+        }
+
+        > div {
+            @include flexMid;
+            // justify-content: space-evenly;
+            width: 95vw;
+            height: 75px;
+            border-radius: 20px;
+            color: #000;
+            margin: 10px 0;
+            background-color: lighten($grey, 1%);
+            box-shadow: 3px 5px 15px darken($grey, 10%);
+        }
+
+        i {
+            // @include flexMid;
+            // justify-content: stretch;
+            display: block;
+            font-size: 1.3rem;
+            color: darken($grey, 50%);
+
+            &:not(.fa-mobile-alt) {
+                object-fit: contain;
+
+                &::before {
+                    width: 15px;
+                }
+            }
+        }
+
+        p {
+            margin-left: 15px;
+            font-weight: 500;
+            min-width: 180px;
+        }
+    }
+}

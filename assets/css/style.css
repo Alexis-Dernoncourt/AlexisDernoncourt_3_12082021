@@ -1,3 +1,157 @@
+*, ::before, ::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto";
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0 10px 0;
+  background-color: #fff;
+  box-shadow: 0 2px 5px #ccc;
+  z-index: 100;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.search-form form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 50px;
+  padding: 10px;
+  background-color: #e8e8e8;
+  color: #323232;
+}
+.search-form form label {
+  height: auto;
+}
+.search-form form label span {
+  position: absolute;
+  height: 1.25rem;
+  display: flex;
+  align-items: center;
+  margin-left: 8px;
+}
+.search-form form input {
+  width: auto;
+  border: none;
+  background: transparent;
+}
+.search-form form input[placeholder] {
+  color: black;
+  text-align: center;
+  font-size: 1rem;
+  height: 1.25rem;
+}
+
+.explore-restaurants-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 30px;
+  text-align: center;
+}
+.explore-restaurants-container > h1 {
+  font-weight: 700;
+  margin-bottom: 10px;
+  padding: 0 30px;
+}
+.explore-restaurants-container p {
+  font-weight: 300;
+  font-size: 1.05rem;
+}
+.explore-restaurants-container > a {
+  display: block;
+  height: auto;
+  padding: 15px 30px;
+  margin: 30px 0;
+  max-width: 450px;
+  border-radius: 50px;
+  background: linear-gradient(170deg, #ff79da 0%, #9356dc 100%);
+  box-shadow: 0px 6px 10px #ccc;
+  color: #fff;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.how-it-works-container {
+  background-color: #fff;
+  padding: 50px 20px;
+}
+.how-it-works-container > .how-it-works-cards-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px 15px;
+}
+.how-it-works-container > .how-it-works-cards-container > a {
+  text-decoration: none;
+  width: 100%;
+  position: relative;
+}
+.how-it-works-container .how-it-works-steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: unset;
+}
+.how-it-works-container .how-it-works-steps > .circle {
+  width: 27px;
+  height: 27px;
+  background-color: #9356dc;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: -15px;
+  z-index: 10;
+}
+.how-it-works-container .how-it-works-steps > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 95vw;
+  height: 75px;
+  border-radius: 20px;
+  color: #000;
+  margin: 10px 0;
+  background-color: #f3f3f3;
+  box-shadow: 3px 5px 15px #d7d7d7;
+}
+.how-it-works-container .how-it-works-steps i {
+  display: block;
+  font-size: 1.3rem;
+  color: #717171;
+}
+.how-it-works-container .how-it-works-steps i:not(.fa-mobile-alt) {
+  object-fit: contain;
+}
+.how-it-works-container .how-it-works-steps i:not(.fa-mobile-alt)::before {
+  width: 15px;
+}
+.how-it-works-container .how-it-works-steps p {
+  margin-left: 15px;
+  font-weight: 500;
+  min-width: 180px;
+}
 
 /*# sourceMappingURL=style.css.map */
