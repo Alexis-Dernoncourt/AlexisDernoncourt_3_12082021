@@ -189,3 +189,63 @@ header {
         }
     }
 }
+
+.restaurants-container {
+    padding: 50px 20px;
+
+    .restaurant-card {
+        border-radius: 10px;
+        margin: 20px 0;
+        box-shadow: 0px 0px 10px #ccc;
+        position: relative;
+
+        a {
+            display: flex;
+            flex-direction: column;
+            justify-content: stretch;
+            text-decoration: none;
+            color: #000;
+            height: max-content;
+        }
+
+        .card-head {
+            height: 170px;
+
+            img {
+                @include imgPosition;
+                object-position: 0px 0px;
+                border-radius: 10px 10px 0 0;
+            }
+
+            .is-new-restaurant {
+                position: absolute;
+                top: 12px;
+                right: 12px;
+                border-radius: 2px;
+                padding: 7px 15px;
+                font-size: 0.8rem;
+                font-weight: 500;
+                background-color: $tertiary-color;
+                color: darken($tertiary-color, 40%);
+            }
+        }
+
+        .card-content {
+            padding: 20px 15px;
+            display: flex;
+            justify-content: space-between;
+
+            .card-subtitle {
+                font-weight: 300;
+                font-size: 1.1rem;
+            }
+
+            .card-like-btn {
+                @include flexMid;
+                width: 42px;
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+
