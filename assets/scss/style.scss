@@ -50,6 +50,7 @@ body {
     display: flex;
     flex-direction: column;
     font-family: $secondary-font;
+    background-color: rgb(246, 246, 246);
 }
 
 header {
@@ -68,7 +69,8 @@ header {
         width: 100vw;
         height: 50px;
         padding: 10px;
-        background-color: darken($grey, 3%);
+        //background-color: darken($grey, 3%);
+        background-color: rgb(234, 234, 234);
         color: rgb(50, 50, 50);
 
         label {
@@ -213,7 +215,7 @@ header {
 
             img {
                 @include imgPosition;
-                object-position: 0px 0px;
+                object-position: 0px;
                 border-radius: 10px 10px 0 0;
             }
 
@@ -249,3 +251,34 @@ header {
     }
 }
 
+
+footer {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 20px;
+    background-color: rgb(53, 53, 53);
+    color: #fff;
+
+    img {
+        filter: invert(1);
+        margin-bottom: 15px;
+    }
+
+    a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: 400;
+        margin-bottom: 7px;
+
+        span {
+            @include flexMid;
+            width: 10px;
+            font-size: 0.9rem;
+            margin-right: 5px;
+        }
+
+        .fa-hands-helping {
+            transform: rotateY(50deg);
+        }
+    }
+}

@@ -8,6 +8,7 @@ body {
   display: flex;
   flex-direction: column;
   font-family: "Roboto";
+  background-color: #f6f6f6;
 }
 
 header {
@@ -32,7 +33,7 @@ header {
   width: 100vw;
   height: 50px;
   padding: 10px;
-  background-color: #e8e8e8;
+  background-color: #eaeaea;
   color: #323232;
 }
 .search-form form label {
@@ -178,7 +179,7 @@ header {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 0px 0px;
+  object-position: 0px;
   border-radius: 10px 10px 0 0;
 }
 .restaurants-container .restaurant-card .card-head .is-new-restaurant {
@@ -207,6 +208,35 @@ header {
   justify-content: center;
   width: 42px;
   font-size: 1.5rem;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 20px;
+  background-color: #353535;
+  color: #fff;
+}
+footer img {
+  filter: invert(1);
+  margin-bottom: 15px;
+}
+footer a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 400;
+  margin-bottom: 7px;
+}
+footer a span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10px;
+  font-size: 0.9rem;
+  margin-right: 5px;
+}
+footer a .fa-hands-helping {
+  transform: rotateY(50deg);
 }
 
 /*# sourceMappingURL=style.css.map */
