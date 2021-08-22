@@ -241,9 +241,14 @@ footer a .fa-hands-helping {
 }
 
 /* Style des pages MENUS */
+.menu-container .--img-portrait > img {
+  object-position: center;
+}
 .menu-container .__menu-img-head {
   position: absolute;
   z-index: -1;
+  width: 100vw;
+  height: 270px;
 }
 .menu-container .__menu-img-head > img {
   width: 100%;
@@ -270,7 +275,7 @@ footer a .fa-hands-helping {
 }
 
 .menu-content-container {
-  margin-top: 53%;
+  margin-top: 60%;
   display: flex;
   flex-direction: column;
   padding: 30px 20px;

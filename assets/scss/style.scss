@@ -286,9 +286,17 @@ footer {
 
 /* Style des pages MENUS */
 .menu-container {
+    .--img-portrait {
+        > img {
+            object-position: center;
+        }
+    }
+
     .__menu-img-head {
         position: absolute;
         z-index: -1;
+        width: 100vw;
+        height: 270px;
         
         > img {
             @include imgPosition;
@@ -303,7 +311,7 @@ footer {
     }
 }
 .menu-content-container {
-    margin-top: 53%;
+    margin-top: 60%;
     display: flex;
     flex-direction: column;
     padding: 30px 20px;
