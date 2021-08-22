@@ -289,7 +289,10 @@ footer {
     .__menu-img-head {
         position: absolute;
         z-index: -1;
-        @include imgPosition;
+        
+        > img {
+            @include imgPosition;
+        }
     }
 
     > a {
