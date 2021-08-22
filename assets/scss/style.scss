@@ -69,7 +69,6 @@ header {
         width: 100vw;
         height: 50px;
         padding: 10px;
-        //background-color: darken($grey, 3%);
         background-color: rgb(234, 234, 234);
         color: rgb(50, 50, 50);
 
@@ -286,16 +285,62 @@ footer {
 
 
 /* Style des pages MENUS */
+.menu-container {
+    .__menu-img-head {
+        position: absolute;
+        z-index: -1;
+        @include imgPosition;
+    }
 
+    > a {
+        @include btnColor;
+        @include flexMid;
+        margin: auto 10% 10% 10%;
+        max-width: unset;
+    }
+}
 .menu-content-container {
+    margin-top: 53%;
     display: flex;
     flex-direction: column;
     padding: 30px 20px;
+    background-color: #f6f6f6;
+    border-radius: 30px 30px 0 0;
+
+    .menu-title-head {
+        @include flexMid;
+        justify-content: space-between;
+        font-family: $main-font;
+        height: 50px;
+        font-size: 0.8rem;
+
+        .card-like-btn {
+            height: 100%;
+            @include flexMid;
+            font-size: 1.8rem;
+        }
+    }
+
+    .menu-title {
+        text-transform: uppercase;
+        font-weight: 300;
+        font-size: 1.2rem;
+        margin-top: 30px;
+        &::after {
+            content: "";
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: $tertiary-color;
+            margin-top: 5px;
+        }
+    }
 
     .menu-item {
         display: flex;
         flex-direction: row;
-        height: max-content;
+        align-items: center;
+        height: 70px;
         margin: 20px 0;
         padding: 10px;
         background-color: #fff;
@@ -303,16 +348,22 @@ footer {
         box-shadow: 0px 6px 10px #ccc;
 
         .menu-item-content {
-
+            width: 85%;
+            overflow: hidden;
             p {
                 font-weight: 300;
+                line-height: 25px;
+                margin-top: 3px;
+                white-space: nowrap;
             }
         }
 
         .__price {
+            @include flexMid;
+            align-items: flex-end;
             margin-left: auto;
             align-self: flex-end;
-            height: 100%;
+            height: 50%;
             font-weight: bold;
         }
     }
