@@ -285,6 +285,9 @@ footer {
 
 
 /* Style des pages MENUS */
+.--header-menus {
+    box-shadow: unset;
+}
 .menu-container {
     .--img-portrait {
         > img {
@@ -296,7 +299,7 @@ footer {
         position: absolute;
         z-index: -1;
         width: 100vw;
-        height: 270px;
+        height: 70vw;
         
         > img {
             @include imgPosition;
