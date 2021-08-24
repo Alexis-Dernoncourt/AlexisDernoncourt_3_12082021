@@ -309,7 +309,7 @@ footer {
     > a {
         @include btnColor;
         @include flexMid;
-        margin: auto 10% 10% 10%;
+        margin: auto 20% 10% 20%;
         max-width: unset;
     }
 }
@@ -317,7 +317,8 @@ footer {
     margin-top: 60%;
     display: flex;
     flex-direction: column;
-    padding: 30px 20px;
+    width: 100vw;
+    padding: 30px 10px;
     background-color: #f6f6f6;
     border-radius: 30px 30px 0 0;
 
@@ -328,10 +329,16 @@ footer {
         height: 50px;
         font-size: 0.8rem;
 
+        a {
+            text-decoration: none;
+            color: unset;
+        }
+
         .card-like-btn {
             height: 100%;
             @include flexMid;
             font-size: 1.8rem;
+            cursor: pointer;
         }
     }
 
@@ -353,32 +360,45 @@ footer {
     .menu-item {
         display: flex;
         flex-direction: row;
-        align-items: center;
-        height: 70px;
+        align-items: stretch;
+        height: max-content;
         margin: 20px 0;
-        padding: 10px;
         background-color: #fff;
-        border-radius: 10px;
-        box-shadow: 0px 6px 10px #ccc;
+        border-radius: 15px;
+        box-shadow: 0px 6px 10px darken($grey, 10%);
 
         .menu-item-content {
-            width: 85%;
-            overflow: hidden;
+            width: auto;
+            padding: 10px 0 7px 10px;
+
+            h3 {
+                line-height: 25px;
+                font-size: 1.1rem;
+            }
+
             p {
+                font-size: 0.9rem;
                 font-weight: 300;
                 line-height: 25px;
-                margin-top: 3px;
                 white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
         }
 
         .__price {
             @include flexMid;
-            align-items: flex-end;
             margin-left: auto;
             align-self: flex-end;
+            width: auto;
             height: 50%;
             font-weight: bold;
+            font-size: 0.9rem;
+            padding: 10px 7px 12px 0;
+        }
+
+        &:hover {
+            cursor: pointer;
         }
     }
 }
