@@ -38,6 +38,7 @@ header {
 }
 .search-form form label {
   height: auto;
+  text-align: center;
 }
 .search-form form label span {
   position: absolute;
