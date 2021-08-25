@@ -15,17 +15,17 @@
     <title>OhMyFood - Réservez le menu qui vous convient</title>
 </head>
 <body>
-    <header>
-        <a href="index.html">
+    <header class="headerContainer">
+        <a class="headerContainer__link" href="index.html">
             <img
+                class="headerContainer__logo"
                 src="assets/images/logo/ohmyfood@2x.svg"
                 alt="OhMyFood logo"
-                width="150px"
             />
         </a>
     </header>
 
-    <section class="search-form">
+    <section class="searchForm">
         <form action="" method="get">
             <label for="restaurant-search-form">
                 <span class="fas fa-map-marker-alt"></span>
@@ -34,18 +34,18 @@
         </form>
     </section>
 
-    <section class="explore-restaurants-container">
-        <h1>Réservez le menu qui vous convient</h1>
-        <p>Découvrez des restaurants d'exception, séléctionnés par nos soins.</p>
-        <a href="#explore-restaurants">Explorer nos restaurants</a>
+    <section class="exploreContainer">
+        <h1 class="exploreContainer__title">Réservez le menu qui vous convient</h1>
+        <p class="exploreContainer__description">Découvrez des restaurants d'exception, séléctionnés par nos soins.</p>
+        <a class="btn" href="#restaurants">Explorer nos restaurants</a>
     </section>
 
-    <section class="how-it-works-container">
+    <section class="functioningContainer">
         <h2>Fonctionnement</h2>
-        <div class="how-it-works-cards-container">
+        <div class="functioningContainer__cardsContainer">
             <a href="">
-                <div class="how-it-works-steps">
-                    <span class="circle">1</span>
+                <div class="functioningContainer__steps">
+                    <span class="functioningContainer__steps__circle">1</span>
                     <div>
                         <i class="fas fa-mobile-alt"></i>
                         <div>
@@ -55,8 +55,8 @@
                 </div>
             </a>
             <a href="">
-                <div class="how-it-works-steps">
-                    <span class="circle">2</span>
+                <div class="functioningContainer__steps">
+                    <span class="functioningContainer__steps__circle">2</span>
                     <div>
                         <i class="fas fa-list-ul"></i>
                         <div>
@@ -66,8 +66,8 @@
                 </div>
             </a>
             <a href="">
-                <div class="how-it-works-steps">
-                    <span class="circle">3</span>
+                <div class="functioningContainer__steps">
+                    <span class="functioningContainer__steps__circle">3</span>
                     <div>
                         <i class="fas fa-store"></i>
                         <div>
@@ -79,97 +79,105 @@
         </div>
     </section>
 
-    <section class="restaurants-container">
-        <h2 id="explore-restaurants">Restaurants</h2>
-        <div class="restaurant-card">
+    <section class="restaurantsContainer">
+        <h2 id="restaurants">Restaurants</h2>
+        <div class="restaurantsContainer__card">
             <a href="menus/Menu-La_palette_du_gout.html">
-                <div class="card-head">
+                <div class="restaurantsContainer__cardHead">
                     <img
+                        class="restaurantsContainer__cardHead__img"
                         src="assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg"
                         alt="Restaurant La palette du goût"
                     />
-                    <div class="is-new-restaurant">Nouveau</div>
+                    <div class="restaurantsContainer__cardHead__new">Nouveau</div>
                 </div>
-                <div class="card-content">
-                    <div class="card-text">
-                        <h3 class="card-title">La palette du goût</h3>
-                        <p class="card-subtitle">Ménilmontant</p>
+                <div class="restaurantsContainer__card__content">
+                    <div class="restaurantsContainer__card__content__text">
+                        <h3 class="restaurantsContainer__card__content__title">La palette du goût</h3>
+                        <p class="restaurantsContainer__card__content__subtitle">Ménilmontant</p>
                     </div>
-                    <div class="far fa-heart card-like-btn"></div> <!--avec z-index pour être au dessus -->
                 </div>
             </a>
+            <div class="far fa-heart restaurantsContainer__card__emptyLikeBtn"></div>
+            <div class="fas fa-heart restaurantsContainer__card__plainLikeBtn"></div>
         </div>
-        <div class="restaurant-card">
+        <div class="restaurantsContainer__card">
             <a href="menus/Menu-La_note_enchantee.html">
-                <div class="card-head">
+                <div class="restaurantsContainer__cardHead">
                     <img
+                        class="restaurantsContainer__cardHead__img"
                         src="assets/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg"
                         alt="Restaurant La note enchantée">
-                    <div class="is-new-restaurant">Nouveau</div>
+                    <div class="restaurantsContainer__cardHead__new">Nouveau</div>
                 </div>
-                <div class="card-content">
-                    <div class="card-text">
-                        <h3 class="card-title">La note enchantée</h3>
-                        <p class="card-subtitle">Charonne</p>
+                <div class="restaurantsContainer__card__content">
+                    <div class="restaurantsContainer__card__content__text">
+                        <h3 class="restaurantsContainer__card__content__title">La note enchantée</h3>
+                        <p class="restaurantsContainer__card__content__subtitle">Charonne</p>
                     </div>
-                    <div class="far fa-heart card-like-btn"></div> <!--avec z-index pour être au dessus -->
                 </div>
             </a>
+            <div class="far fa-heart restaurantsContainer__card__emptyLikeBtn"></div>
+            <div class="fas fa-heart restaurantsContainer__card__plainLikeBtn"></div>
         </div>
-        <div class="restaurant-card">
+        <div class="restaurantsContainer__card">
             <a href="menus/Menu-A_la_francaise.html">
-                <div class="card-head">
+                <div class="restaurantsContainer__cardHead">
                     <img
+                        class="restaurantsContainer__cardHead__img"
                         src="assets/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg"
                         alt="Restaurant À la française">
                 </div>
-                <div class="card-content">
-                    <div class="card-text">
-                        <h3 class="card-title">À la française</h3>
-                        <p class="card-subtitle">Cité Rouge</p>
+                <div class="restaurantsContainer__card__content">
+                    <div class="restaurantsContainer__card__content__text">
+                        <h3 class="restaurantsContainer__card__content__title">À la française</h3>
+                        <p class="restaurantsContainer__card__content__subtitle">Cité Rouge</p>
                     </div>
-                    <div class="far fa-heart card-like-btn"></div> <!--avec z-index pour être au dessus -->
                 </div>
             </a>
+            <div class="far fa-heart restaurantsContainer__card__emptyLikeBtn"></div>
+            <div class="fas fa-heart restaurantsContainer__card__plainLikeBtn"></div>
         </div>
-        <div class="restaurant-card">
+        <div class="restaurantsContainer__card">
             <a href="menus/Menu-Le_delice_des_sens.html">
-                <div class="card-head">
+                <div class="restaurantsContainer__cardHead">
                     <img
+                        class="restaurantsContainer__cardHead__img"
                         src="assets/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg"
                         alt="Restaurant Le délice des sens">
                 </div>
-                <div class="card-content">
-                    <div class="card-text">
-                        <h3 class="card-title">Le délice des sens</h3>
-                        <p class="card-subtitle">Folie-Méricourt</p>
+                <div class="restaurantsContainer__card__content">
+                    <div class="restaurantsContainer__card__content__text">
+                        <h3 class="restaurantsContainer__card__content__title">Le délice des sens</h3>
+                        <p class="restaurantsContainer__card__content__subtitle">Folie-Méricourt</p>
                     </div>
-                    <div class="far fa-heart card-like-btn"></div> <!--avec z-index pour être au dessus -->
                 </div>
             </a>
+            <div class="restaurantsContainer__card__emptyLikeBtn"><i class="far fa-heart "></i></div>
+            <div class="restaurantsContainer__card__plainLikeBtn"><i class="fas fa-heart "></i></div>
         </div>
     </section>
 
-    <footer>
-        <div>
+    <footer class="footerContainer">
+        <div class="footerContainer__logo">
             <a href="index.html">
                 <img
+                    class="footerContainer__logo--invert"
                     src="assets/images/logo/ohmyfood@2x.svg"
                     alt="OhMyFood logo"
-                    width="100px"
                 />
             </a>
         </div>
-        <a href="">
-            <span class="fas fa-utensils"></span>
+        <a href="" class="footerContainer__link">
+            <span class="fas fa-utensils footerContainer__link__icon"></span>
             Proposer un restaurant
         </a>
-        <a href="">
-            <span class="fas fa-hands-helping"></span>
+        <a href="" class="footerContainer__link">
+            <span class="fas fa-hands-helping footerContainer__link__icon footerContainer__link__icon--rotate"></span>
             Devenir partenaire
         </a>
-        <a href="">Mentions légales</a>
-        <a href="mailto:contact@ohmyfood.com">Contact</a>
+        <a href="" class="footerContainer__link">Mentions légales</a>
+        <a href="mailto:contact@ohmyfood.com" class="footerContainer__link">Contact</a>
     </footer>
 </body>
 </html>
