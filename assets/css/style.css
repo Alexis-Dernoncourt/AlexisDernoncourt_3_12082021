@@ -1,3 +1,16 @@
+.restaurantsContainer__card__plainLikeBtn, .restaurantsContainer__card__emptyLikeBtn {
+  position: absolute;
+  right: 0;
+  bottom: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+  height: 20%;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
 *, ::before, ::after {
   margin: 0;
   padding: 0;
@@ -209,38 +222,21 @@ a {
 }
 .restaurantsContainer__card__content {
   padding: 20px 15px;
+  width: 80%;
 }
 .restaurantsContainer__card__content__subtitle {
   font-weight: 300;
   font-size: 1.1rem;
 }
 .restaurantsContainer__card__emptyLikeBtn {
-  position: absolute;
-  right: 0;
-  bottom: 10%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 42px;
-  font-size: 1.5rem;
   z-index: 10;
-  cursor: pointer;
 }
 .restaurantsContainer__card__emptyLikeBtn:hover {
   display: none;
 }
 .restaurantsContainer__card__plainLikeBtn {
-  position: absolute;
-  right: 0;
-  bottom: 10%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 42px;
-  font-size: 1.5rem;
   z-index: 9;
   opacity: 0;
-  cursor: pointer;
 }
 .restaurantsContainer__card__plainLikeBtn:hover {
   opacity: 1;

@@ -4,7 +4,7 @@ $secondary-color: #ff79da;
 $tertiary-color: #99e2d0;
 
 $grey: #f0f0f0;
-$btn-gradient: linear-gradient(170deg, rgba(255,121,218,1)0%, rgba(147,86,220,1)100%);
+$btn-gradient: linear-gradient(170deg, #ff79da 0%, #9356dc 100%);
 
 $main-font: 'Shrikhand', cursive;
 $secondary-font: 'Roboto';
@@ -37,6 +37,18 @@ $card-radius: 20px;
     color: #fff;
     font-weight: 500;
     text-decoration: none;
+}
+
+// Placeholders:
+%homeLikeBtn {
+    position: absolute;
+    right: 0;
+    bottom: 5%;
+    @include flexMid;
+    width: 20%;
+    height: 20%;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 
 // Général:
@@ -242,6 +254,7 @@ a {
         }
         &__content {
             padding: 20px 15px;
+            width: 80%;
 
             &__subtitle {
                 font-weight: 300;
@@ -249,30 +262,16 @@ a {
             }  
         }
         &__emptyLikeBtn {
-            position: absolute;
-            right: 0;
-            bottom: 10%;
-            @include flexMid;
-            width: 42px;
-            font-size: 1.5rem;
+            @extend %homeLikeBtn;
             z-index: 10;
-            cursor: pointer;
-
             &:hover {
                 display: none;
             }
         }
         &__plainLikeBtn {
-            position: absolute;
-            right: 0;
-            bottom: 10%;
-            @include flexMid;
-            width: 42px;
-            font-size: 1.5rem;
+            @extend %homeLikeBtn;
             z-index: 9;
             opacity: 0;
-            cursor: pointer;
-
             &:hover {
                 opacity: 1;
             }
