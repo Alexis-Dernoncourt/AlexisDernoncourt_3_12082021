@@ -1,22 +1,26 @@
 // Variables:
 $primary-color: #9356dc;
+$primary-lighten-color: lighten($primary-color, 5%);
 $secondary-color: #ff79da;
+$secondary-lighten-color: lighten($secondary-color, 5%);
 $tertiary-color: #99e2d0;
 
 $grey: #f0f0f0;
 $btn-gradient: linear-gradient(170deg, #ff79da 0%, #9356dc 100%);
+$btnHoverColor: linear-gradient(170deg, $primary-lighten-color 0%, $secondary-lighten-color 100%);
 
 $main-font: 'Shrikhand', cursive;
-$secondary-font: 'Roboto';
+$secondary-font: 'Roboto', sans-serif;
 
 $card-radius: 20px;
 
 
 // Mixins:
-@mixin flexMid {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+@mixin flexMid($align:center, $justify:center, $direction:column) {
+    @extend %flexMid;
+    align-items: $align;
+    justify-content: $justify;
+    flex-direction: $direction;
 }
 
 @mixin imgPosition {
@@ -25,12 +29,25 @@ $card-radius: 20px;
     object-fit: cover;
 }
 
-@mixin btnColor {
-    display: block;
+
+
+// Placeholders:
+%homeLikeBtn {
+    position: absolute;
+    right: 10px;
+    bottom: 5%;
+    @include flexMid(center,center,initial);
+    width: 20%;
+    height: 20%;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+%btnColor {
+    @include flexMid(center,center,initial);
     height: auto;
     padding: 15px 30px;
     margin: 30px 0;
-    max-width: 450px;
     border-radius: 50px;
     background: $btn-gradient;
     box-shadow: 0px 6px 10px #ccc;
@@ -39,16 +56,15 @@ $card-radius: 20px;
     text-decoration: none;
 }
 
-// Placeholders:
-%homeLikeBtn {
-    position: absolute;
-    right: 0;
-    bottom: 5%;
-    @include flexMid;
-    width: 20%;
-    height: 20%;
-    font-size: 1.5rem;
-    cursor: pointer;
+%btnHover {
+    @extend %btnColor;
+    background: $btnHoverColor;
+    box-shadow: 0px 2px 7px #ccc;
+    font-weight: 600;
+}
+
+%flexMid {
+    display: flex;
 }
 
 // Général:
@@ -58,8 +74,12 @@ $card-radius: 20px;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    display: flex;
+    @extend %flexMid;
     flex-direction: column;
     font-family: $secondary-font;
     background-color: rgb(246, 246, 246);
@@ -70,7 +90,7 @@ a {
 }
 
 .headerContainer {
-    @include flexMid;
+    @include flexMid(center,center,initial);
     padding: 20px 0 10px 0;
     background-color: #fff;
     box-shadow: 0 2px 5px #ccc;
@@ -86,10 +106,10 @@ a {
 }
 
 .searchForm {
-    @include flexMid;
+    @include flexMid(center,center,initial);
 
     form {
-        @include flexMid;
+        @include flexMid(center,center,initial);
         width: 100vw;
         height: 50px;
         padding: 10px;
@@ -106,8 +126,7 @@ a {
                 top: 50%;
                 transform: translateY(-50%);
                 //height: 30px;
-                display: flex;
-                align-items: center;
+                @include flexMid(center, unset, initial);
                 margin-left: 8px;
             }
         }
@@ -127,8 +146,7 @@ a {
 }
 
 .exploreContainer {
-    @include flexMid;
-    flex-direction: column;
+    @include flexMid();
     padding: 30px;
     text-align: center;
 
@@ -144,7 +162,10 @@ a {
     }
 
     > .btn {
-        @include btnColor;
+        @extend %btnColor;
+        &:hover {
+            @extend %btnHover;
+        }
     }
 }
 
@@ -153,8 +174,7 @@ a {
     padding: 50px 20px;
 
     &__cardsContainer {
-        @include flexMid;
-        flex-direction: column;
+        @include flexMid();
         gap: 10px;
         margin: 20px 15px;
 
@@ -165,8 +185,7 @@ a {
     }
 
     &__steps {
-        @include flexMid;
-        justify-content: unset;
+        @include flexMid(center,unset,initial);
 
         &__circle {
             width: 27px;
@@ -175,14 +194,14 @@ a {
             border-radius: 50%;
             color: #fff;
             font-size: 0.9rem;
-            @include flexMid;
+            @include flexMid(center,center,initial);
             position: absolute;
             left: -15px;
             z-index: 10;
         }
 
         > div {
-            @include flexMid;
+            @include flexMid(center,center,initial);
             width: 95vw;
             height: 75px;
             border-radius: 20px;
@@ -246,8 +265,7 @@ a {
         position: relative;
 
         a {
-            display: flex;
-            flex-direction: column;
+            @include flexMid(initial, initial);
             color: #000;
             height: max-content;
             z-index: 1;
@@ -263,16 +281,28 @@ a {
         }
         &__emptyLikeBtn {
             @extend %homeLikeBtn;
-            z-index: 10;
+            background-color: #f6f6f6;
+            z-index: 3;
             &:hover {
                 display: none;
             }
         }
         &__plainLikeBtn {
             @extend %homeLikeBtn;
-            z-index: 9;
+            background: $btnHoverColor;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            bottom: 4.99%;
             opacity: 0;
+            z-index: 20;
+            font-size: 1.7rem;
+            transition: all .1s ease-in;
             &:hover {
+                transition: all .1s ease-out;
+                opacity: 1;
+            }
+            &:active {
+                transition: all .1s ease-out;
                 opacity: 1;
             }
         }
@@ -280,8 +310,7 @@ a {
 }
 
 .footerContainer {
-    display: flex;
-    flex-direction: column;
+    @include flexMid(initial, initial);
     padding: 30px 20px;
     background-color: rgb(53, 53, 53);
     color: #fff;
@@ -333,10 +362,13 @@ a {
     }
 
     .commandBtn {
-        @include btnColor;
-        @include flexMid;
+        @extend %btnColor;
         margin: auto 20% 10% 20%;
-        max-width: unset;
+
+        &:hover {
+            @extend %btnHover;
+            margin: auto 20% 10% 20%;
+        }
     }
     &__secondaryTitle {
         text-transform: uppercase;
@@ -354,8 +386,7 @@ a {
     }
     &__contentContainer {
         margin-top: 60%;
-        display: flex;
-        flex-direction: column;
+        @include flexMid(initial,initial);
         width: 100vw;
         padding: 30px 10px;
         background-color: #f6f6f6;
@@ -364,15 +395,14 @@ a {
         
     }
     &__mainTitleContainer {
-        @include flexMid;
-        justify-content: space-between;
+        @include flexMid(center,space-between,initial);
         font-family: $main-font;
         height: 50px;
         font-size: 0.8rem;
     }
     &__emptyLikeBtn {
         height: 100%;
-        @include flexMid;
+        @include flexMid(center,center,initial);
         font-size: 1.8rem;
         cursor: pointer;
     }
@@ -381,9 +411,7 @@ a {
     }
 
     .menuItem {
-        display: flex;
-        flex-direction: row;
-        align-items: stretch;
+        @include flexMid(stretch,center,initial);
         height: max-content;
         margin: 20px 0;
         background-color: #fff;
@@ -410,7 +438,7 @@ a {
         }
 
         &__price {
-            @include flexMid;
+            @include flexMid(center,center,initial);
             margin-left: auto;
             align-self: flex-end;
             width: auto;

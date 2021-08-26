@@ -1,14 +1,39 @@
 .restaurantsContainer__card__plainLikeBtn, .restaurantsContainer__card__emptyLikeBtn {
   position: absolute;
-  right: 0;
+  right: 10px;
   bottom: 5%;
-  display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: initial;
   width: 20%;
   height: 20%;
   font-size: 1.5rem;
   cursor: pointer;
+}
+
+.menuContainer .commandBtn, .exploreContainer > .btn, .menuContainer .commandBtn:hover, .exploreContainer > .btn:hover {
+  align-items: center;
+  justify-content: center;
+  flex-direction: initial;
+  height: auto;
+  padding: 15px 30px;
+  margin: 30px 0;
+  border-radius: 50px;
+  background: linear-gradient(170deg, #ff79da 0%, #9356dc 100%);
+  box-shadow: 0px 6px 10px #ccc;
+  color: #fff;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.menuContainer .commandBtn:hover, .exploreContainer > .btn:hover {
+  background: linear-gradient(170deg, #a16be0 0%, #ff93e1 100%);
+  box-shadow: 0px 2px 7px #ccc;
+  font-weight: 600;
+}
+
+.menuContainer .menuItem__price, .menuContainer .menuItem, .menuContainer__emptyLikeBtn, .menuContainer__mainTitleContainer, .menuContainer__contentContainer, .footerContainer, .restaurantsContainer__card a, .functioningContainer__steps > div, .functioningContainer__steps__circle, .functioningContainer__steps, .functioningContainer__cardsContainer, .exploreContainer, .searchForm form label span, .searchForm form, .searchForm, .headerContainer, body, .restaurantsContainer__card__plainLikeBtn, .restaurantsContainer__card__emptyLikeBtn, .menuContainer .commandBtn, .exploreContainer > .btn, .menuContainer .commandBtn:hover, .exploreContainer > .btn:hover {
+  display: flex;
 }
 
 *, ::before, ::after {
@@ -17,10 +42,13 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  display: flex;
   flex-direction: column;
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   background-color: #f6f6f6;
 }
 
@@ -30,9 +58,9 @@ a {
 }
 
 .headerContainer {
-  display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: initial;
   padding: 20px 0 10px 0;
   background-color: #fff;
   box-shadow: 0 2px 5px #ccc;
@@ -46,14 +74,14 @@ a {
 }
 
 .searchForm {
-  display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: initial;
 }
 .searchForm form {
-  display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: initial;
   width: 100vw;
   height: 50px;
   padding: 10px;
@@ -69,8 +97,9 @@ a {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  display: flex;
   align-items: center;
+  justify-content: unset;
+  flex-direction: initial;
   margin-left: 8px;
 }
 .searchForm form input {
@@ -87,7 +116,6 @@ a {
 }
 
 .exploreContainer {
-  display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -103,26 +131,11 @@ a {
   font-weight: 300;
   font-size: 1.05rem;
 }
-.exploreContainer > .btn {
-  display: block;
-  height: auto;
-  padding: 15px 30px;
-  margin: 30px 0;
-  max-width: 450px;
-  border-radius: 50px;
-  background: linear-gradient(170deg, #ff79da 0%, #9356dc 100%);
-  box-shadow: 0px 6px 10px #ccc;
-  color: #fff;
-  font-weight: 500;
-  text-decoration: none;
-}
-
 .functioningContainer {
   background-color: #fff;
   padding: 50px 20px;
 }
 .functioningContainer__cardsContainer {
-  display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -134,10 +147,9 @@ a {
   position: relative;
 }
 .functioningContainer__steps {
-  display: flex;
   align-items: center;
-  justify-content: center;
   justify-content: unset;
+  flex-direction: initial;
 }
 .functioningContainer__steps__circle {
   width: 27px;
@@ -146,17 +158,17 @@ a {
   border-radius: 50%;
   color: #fff;
   font-size: 0.9rem;
-  display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: initial;
   position: absolute;
   left: -15px;
   z-index: 10;
 }
 .functioningContainer__steps > div {
-  display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: initial;
   width: 95vw;
   height: 75px;
   border-radius: 20px;
@@ -214,7 +226,8 @@ a {
   position: relative;
 }
 .restaurantsContainer__card a {
-  display: flex;
+  align-items: initial;
+  justify-content: initial;
   flex-direction: column;
   color: #000;
   height: max-content;
@@ -229,21 +242,34 @@ a {
   font-size: 1.1rem;
 }
 .restaurantsContainer__card__emptyLikeBtn {
-  z-index: 10;
+  background-color: #f6f6f6;
+  z-index: 3;
 }
 .restaurantsContainer__card__emptyLikeBtn:hover {
   display: none;
 }
 .restaurantsContainer__card__plainLikeBtn {
-  z-index: 9;
+  background: linear-gradient(170deg, #a16be0 0%, #ff93e1 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  bottom: 4.99%;
   opacity: 0;
+  z-index: 20;
+  font-size: 1.7rem;
+  transition: all 0.1s ease-in;
 }
 .restaurantsContainer__card__plainLikeBtn:hover {
+  transition: all 0.1s ease-out;
+  opacity: 1;
+}
+.restaurantsContainer__card__plainLikeBtn:active {
+  transition: all 0.1s ease-out;
   opacity: 1;
 }
 
 .footerContainer {
-  display: flex;
+  align-items: initial;
+  justify-content: initial;
   flex-direction: column;
   padding: 30px 20px;
   background-color: #353535;
@@ -285,22 +311,10 @@ a {
   object-position: center;
 }
 .menuContainer .commandBtn {
-  display: block;
-  height: auto;
-  padding: 15px 30px;
-  margin: 30px 0;
-  max-width: 450px;
-  border-radius: 50px;
-  background: linear-gradient(170deg, #ff79da 0%, #9356dc 100%);
-  box-shadow: 0px 6px 10px #ccc;
-  color: #fff;
-  font-weight: 500;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   margin: auto 20% 10% 20%;
-  max-width: unset;
+}
+.menuContainer .commandBtn:hover {
+  margin: auto 20% 10% 20%;
 }
 .menuContainer__secondaryTitle {
   text-transform: uppercase;
@@ -318,7 +332,8 @@ a {
 }
 .menuContainer__contentContainer {
   margin-top: 60%;
-  display: flex;
+  align-items: initial;
+  justify-content: initial;
   flex-direction: column;
   width: 100vw;
   padding: 30px 10px;
@@ -326,19 +341,18 @@ a {
   border-radius: 30px 30px 0 0;
 }
 .menuContainer__mainTitleContainer {
-  display: flex;
   align-items: center;
-  justify-content: center;
   justify-content: space-between;
+  flex-direction: initial;
   font-family: "Shrikhand", cursive;
   height: 50px;
   font-size: 0.8rem;
 }
 .menuContainer__emptyLikeBtn {
   height: 100%;
-  display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: initial;
   font-size: 1.8rem;
   cursor: pointer;
 }
@@ -346,9 +360,9 @@ a {
   display: none;
 }
 .menuContainer .menuItem {
-  display: flex;
-  flex-direction: row;
   align-items: stretch;
+  justify-content: center;
+  flex-direction: initial;
   height: max-content;
   margin: 20px 0;
   background-color: #fff;
@@ -372,9 +386,9 @@ a {
   text-overflow: ellipsis;
 }
 .menuContainer .menuItem__price {
-  display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: initial;
   margin-left: auto;
   align-self: flex-end;
   width: auto;
