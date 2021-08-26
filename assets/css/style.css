@@ -1,11 +1,11 @@
 .restaurantsContainer__card__plainLikeBtn, .restaurantsContainer__card__emptyLikeBtn {
   position: absolute;
-  right: 10px;
+  right: 15px;
   bottom: 5%;
   align-items: center;
   justify-content: center;
   flex-direction: initial;
-  width: 20%;
+  width: 10%;
   height: 20%;
   font-size: 1.5rem;
   cursor: pointer;
@@ -242,7 +242,6 @@ a {
   font-size: 1.1rem;
 }
 .restaurantsContainer__card__emptyLikeBtn {
-  background-color: #f6f6f6;
   z-index: 3;
 }
 .restaurantsContainer__card__emptyLikeBtn:hover {
@@ -251,11 +250,13 @@ a {
 .restaurantsContainer__card__plainLikeBtn {
   background: linear-gradient(170deg, #a16be0 0%, #ff93e1 100%);
   background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  color: transparent;
   bottom: 4.99%;
   opacity: 0;
   z-index: 20;
-  font-size: 1.7rem;
+  font-size: 1.8rem;
   transition: all 0.1s ease-in;
 }
 .restaurantsContainer__card__plainLikeBtn:hover {
