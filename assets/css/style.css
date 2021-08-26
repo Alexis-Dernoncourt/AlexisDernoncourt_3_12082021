@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: initial;
-  width: 10%;
+  width: 12%;
   height: 20%;
   font-size: 1.5rem;
   cursor: pointer;
@@ -32,7 +32,7 @@
   font-weight: 600;
 }
 
-.menuContainer .menuItem__price, .menuContainer .menuItem, .menuContainer__emptyLikeBtn, .menuContainer__mainTitleContainer, .menuContainer__contentContainer, .footerContainer, .restaurantsContainer__card a, .functioningContainer__steps--content, .functioningContainer__steps__circle, .functioningContainer__steps, .functioningContainer__cardsContainer, .exploreContainer, .searchForm form label span, .searchForm form, .searchForm, .headerContainer, body, .restaurantsContainer__card__plainLikeBtn, .restaurantsContainer__card__emptyLikeBtn, .menuContainer .commandBtn, .exploreContainer > .btn, .menuContainer .commandBtn:hover, .exploreContainer > .btn:hover {
+.menuContainer .menuItem__price, .menuContainer .menuItem, .menuContainer__emptyLikeBtn, .menuContainer__mainTitleContainer, .menuContainer__contentContainer, .footerContainer, .restaurantsContainer__card a, .functioningContainer__steps--content, .functioningContainer__steps .fas::before, .functioningContainer__steps__circle, .functioningContainer__steps, .functioningContainer__cardsContainer, .exploreContainer, .searchForm form label span, .searchForm form, .searchForm, .headerContainer, body, .restaurantsContainer__card__plainLikeBtn, .restaurantsContainer__card__emptyLikeBtn, .menuContainer .commandBtn, .exploreContainer > .btn, .menuContainer .commandBtn:hover, .exploreContainer > .btn:hover {
   display: flex;
 }
 
@@ -131,16 +131,24 @@ a {
   font-weight: 300;
   font-size: 1.05rem;
 }
+.exploreContainer > .btn {
+  transition: all 0.2s ease-in-out;
+}
+.exploreContainer > .btn:hover {
+  transition: all 0.2s ease-in-out;
+}
+
 .functioningContainer {
   background-color: #fff;
   padding: 50px 20px;
+  width: 100vw;
 }
 .functioningContainer__cardsContainer {
   align-items: center;
   justify-content: center;
   flex-direction: column;
   gap: 10px;
-  margin: 20px 15px;
+  text-align: center;
 }
 .functioningContainer__steps {
   align-items: center;
@@ -163,6 +171,16 @@ a {
   left: -15px;
   z-index: 10;
 }
+.functioningContainer__steps .fas {
+  color: #717171;
+}
+.functioningContainer__steps .fas::before {
+  font-size: 1.2rem;
+  width: 25px;
+  align-items: center;
+  justify-content: stretch;
+  flex-direction: column;
+}
 .functioningContainer__steps--content {
   align-items: center;
   justify-content: center;
@@ -170,32 +188,30 @@ a {
   width: 95vw;
   height: 75px;
   border-radius: 20px;
-  color: #000;
   margin: 10px 0;
   background-color: #f3f3f3;
   box-shadow: 3px 5px 15px #d7d7d7;
-  transition: background 0.2s;
+  transition: background 0.1s ease-in-out;
 }
 .functioningContainer__steps--content:hover {
   cursor: pointer;
-  background: #ffeefa;
-  transition: background 0.2s;
+  background: #f2eafb;
+  transition: background 0.1s ease-in-out;
+  color: #9356dc;
 }
-.functioningContainer__steps i {
-  display: block;
-  font-size: 1.3rem;
-  color: #717171;
-}
-.functioningContainer__steps i:not(.fa-mobile-alt) {
-  object-fit: contain;
-}
-.functioningContainer__steps i:not(.fa-mobile-alt)::before {
-  width: 15px;
-}
-.functioningContainer__steps p {
-  margin-left: 15px;
-  font-weight: 500;
+.functioningContainer__steps--text {
+  margin-left: 5%;
+  font-weight: 600;
   min-width: 180px;
+  color: #1a1a1a;
+  width: 200px;
+  min-width: max-content;
+}
+@media screen and (max-width: 360px) {
+  .functioningContainer__steps--text {
+    margin-left: 5px;
+    font-size: 0.9rem;
+  }
 }
 
 .restaurantsContainer {
@@ -228,6 +244,11 @@ a {
   margin: 20px 0;
   box-shadow: 0px 0px 10px #ccc;
   position: relative;
+  transition: transform 0.1s ease-in-out;
+}
+.restaurantsContainer__card:hover, .restaurantsContainer__card:active {
+  transform: scale(1.03);
+  transition: transform 0.1s ease-in-out;
 }
 .restaurantsContainer__card a {
   align-items: initial;

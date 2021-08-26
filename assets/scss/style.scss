@@ -29,6 +29,9 @@ $card-radius: 20px;
     object-fit: cover;
 }
 
+@mixin hoverAnim($props:all, $time:.1s) {
+    transition: $props $time ease-in-out;
+}
 
 
 // Placeholders:
@@ -37,7 +40,7 @@ $card-radius: 20px;
     right: 15px;
     bottom: 5%;
     @include flexMid(center,center,initial);
-    width: 10%;
+    width: 12%;
     height: 20%;
     font-size: 1.5rem;
     cursor: pointer;
@@ -163,8 +166,10 @@ a {
 
     > .btn {
         @extend %btnColor;
+        @include hoverAnim(all,.2s);
         &:hover {
             @extend %btnHover;
+            @include hoverAnim(all,.2s);
         }
     }
 }
@@ -172,11 +177,13 @@ a {
 .functioningContainer {
     background-color: #fff;
     padding: 50px 20px;
+    width: 100vw;
 
     &__cardsContainer {
         @include flexMid();
         gap: 10px;
-        margin: 20px 15px;
+        //margin: 20px 15px;
+        text-align: center;
     }
 
     &__steps {
@@ -196,43 +203,47 @@ a {
             left: -15px;
             z-index: 10;
         }
+        .fas {
+            color: darken($grey, 50%);
+            &::before {
+                font-size: 1.2rem;
+                width: 25px;
+                @include flexMid(center, stretch, column);
+            }
+        }
 
         &--content {
             @include flexMid(center,center,initial);
             width: 95vw;
             height: 75px;
             border-radius: 20px;
-            color: #000;
             margin: 10px 0;
             background-color: lighten($grey, 1%);
             box-shadow: 3px 5px 15px darken($grey, 10%);
-            transition: background .2s;
+            @include hoverAnim(background,.1s);
+            //transition: background .2s;
 
             &:hover {
                 cursor: pointer;
-                background: lighten($secondary-color, 23%);
-                transition: background .2s;
+                background: lighten($primary-color, 35%);
+                @include hoverAnim(background,.1s);
+                //transition: background .2s;
+                color: $primary-color;
             }
         }
 
-        i {
-            display: block;
-            font-size: 1.3rem;
-            color: darken($grey, 50%);
-
-            &:not(.fa-mobile-alt) {
-                object-fit: contain;
-
-                &::before {
-                    width: 15px;
-                }
-            }
-        }
-
-        p {
-            margin-left: 15px;
-            font-weight: 500;
+        &--text {
+            margin-left: 5%;
+            font-weight: 600;
             min-width: 180px;
+            color: lighten(#000, 10%);
+            width: 200px;
+            min-width: max-content;
+            @media screen and (max-width: 360px) {
+                margin-left: 5px;
+                //font-weight: bold;
+                font-size: 0.9rem;
+            }
         }
     }
 }
@@ -267,6 +278,11 @@ a {
         margin: 20px 0;
         box-shadow: 0px 0px 10px #ccc;
         position: relative;
+        @include hoverAnim(transform);
+        &:hover, &:active {
+            transform: scale(1.03);
+            @include hoverAnim(transform);
+        }
 
         a {
             @include flexMid(initial, initial);
@@ -301,13 +317,13 @@ a {
             opacity: 0;
             z-index: 20;
             font-size: 1.8rem;
-            transition: all .1s ease-in-out;
+            @include hoverAnim();
             &:hover {
-                transition: all .1s ease-in-out;
+                @include hoverAnim();
                 opacity: 1;
             }
             &:active {
-                transition: all .1s ease-in-out;
+                @include hoverAnim();
                 opacity: 1;
             }
         }
