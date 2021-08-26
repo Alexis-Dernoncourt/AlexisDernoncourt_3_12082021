@@ -35,13 +35,10 @@ $card-radius: 20px;
 
 
 // Placeholders:
-%homeLikeBtn {
-    position: absolute;
-    right: 15px;
-    bottom: 5%;
+%likeBtn {
     @include flexMid(center,center,initial);
     width: 12%;
-    height: 20%;
+    height: 100%;
     font-size: 1.5rem;
     cursor: pointer;
 }
@@ -90,6 +87,36 @@ body {
 a {
     text-decoration: none;
     color: unset;
+}
+
+.btn {
+    &__emptyLikeBtn {
+        @extend %likeBtn;
+        z-index: 3;
+        // &:hover {
+        //     display: none;
+        // }
+    }
+    &__plainLikeBtn {
+        @extend %likeBtn;
+        background: $btnHoverColor;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+        bottom: 4.99%;
+        opacity: 0;
+        z-index: 20;
+        @include hoverAnim();
+        &:hover {
+            @include hoverAnim();
+            opacity: 1;
+        }
+        &:active {
+            @include hoverAnim();
+            opacity: 1;
+        }
+    }
 }
 
 .headerContainer {
@@ -288,7 +315,6 @@ a {
             @include flexMid(initial, initial);
             color: #000;
             height: max-content;
-            z-index: 1;
         }
         &__content {
             padding: 20px 15px;
@@ -300,32 +326,32 @@ a {
             }  
         }
         &__emptyLikeBtn {
-            @extend %homeLikeBtn;
+            @extend %likeBtn;
+            position: absolute;
+            background-color: #f6f6f6;
+            right: 15px;
+            bottom: 5%;
             z-index: 3;
-            &:hover {
-                display: none;
+            height: 15%;
+            @include hoverAnim();
+            &:hover, &:active {
+                @include hoverAnim();
+                opacity: 0;
             }
         }
         &__plainLikeBtn {
-            @extend %homeLikeBtn;
+            @extend %likeBtn;
+            position: absolute;
+            right: 15px;
+            height: 15%;
             background: $btnHoverColor;
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             color: transparent;
-            bottom: 4.99%;
-            opacity: 0;
-            z-index: 20;
-            font-size: 1.8rem;
-            @include hoverAnim();
-            &:hover {
-                @include hoverAnim();
-                opacity: 1;
-            }
-            &:active {
-                @include hoverAnim();
-                opacity: 1;
-            }
+            bottom: 5%;
+            opacity: 1;
+            z-index: 2;
         }
     }
 }
@@ -385,10 +411,12 @@ a {
     .commandBtn {
         @extend %btnColor;
         margin: auto 20% 10% 20%;
+        @include hoverAnim(all,.2s);
 
-        &:hover {
+        &:hover, &:active {
             @extend %btnHover;
             margin: auto 20% 10% 20%;
+            @include hoverAnim(all,.2s);
         }
     }
     &__secondaryTitle {
