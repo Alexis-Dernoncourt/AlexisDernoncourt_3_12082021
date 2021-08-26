@@ -177,15 +177,12 @@ a {
         @include flexMid();
         gap: 10px;
         margin: 20px 15px;
-
-        > a {
-            width: 100%;
-            position: relative;
-        }
     }
 
     &__steps {
         @include flexMid(center,unset,initial);
+        width: 100%;
+        position: relative;
 
         &__circle {
             width: 27px;
@@ -200,7 +197,7 @@ a {
             z-index: 10;
         }
 
-        > div {
+        &--content {
             @include flexMid(center,center,initial);
             width: 95vw;
             height: 75px;
@@ -209,6 +206,13 @@ a {
             margin: 10px 0;
             background-color: lighten($grey, 1%);
             box-shadow: 3px 5px 15px darken($grey, 10%);
+            transition: background .2s;
+
+            &:hover {
+                cursor: pointer;
+                background: lighten($secondary-color, 23%);
+                transition: background .2s;
+            }
         }
 
         i {
@@ -297,13 +301,13 @@ a {
             opacity: 0;
             z-index: 20;
             font-size: 1.8rem;
-            transition: all .1s ease-in;
+            transition: all .1s ease-in-out;
             &:hover {
-                transition: all .1s ease-out;
+                transition: all .1s ease-in-out;
                 opacity: 1;
             }
             &:active {
-                transition: all .1s ease-out;
+                transition: all .1s ease-in-out;
                 opacity: 1;
             }
         }

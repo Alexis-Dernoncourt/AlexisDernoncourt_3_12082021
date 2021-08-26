@@ -32,7 +32,7 @@
   font-weight: 600;
 }
 
-.menuContainer .menuItem__price, .menuContainer .menuItem, .menuContainer__emptyLikeBtn, .menuContainer__mainTitleContainer, .menuContainer__contentContainer, .footerContainer, .restaurantsContainer__card a, .functioningContainer__steps > div, .functioningContainer__steps__circle, .functioningContainer__steps, .functioningContainer__cardsContainer, .exploreContainer, .searchForm form label span, .searchForm form, .searchForm, .headerContainer, body, .restaurantsContainer__card__plainLikeBtn, .restaurantsContainer__card__emptyLikeBtn, .menuContainer .commandBtn, .exploreContainer > .btn, .menuContainer .commandBtn:hover, .exploreContainer > .btn:hover {
+.menuContainer .menuItem__price, .menuContainer .menuItem, .menuContainer__emptyLikeBtn, .menuContainer__mainTitleContainer, .menuContainer__contentContainer, .footerContainer, .restaurantsContainer__card a, .functioningContainer__steps--content, .functioningContainer__steps__circle, .functioningContainer__steps, .functioningContainer__cardsContainer, .exploreContainer, .searchForm form label span, .searchForm form, .searchForm, .headerContainer, body, .restaurantsContainer__card__plainLikeBtn, .restaurantsContainer__card__emptyLikeBtn, .menuContainer .commandBtn, .exploreContainer > .btn, .menuContainer .commandBtn:hover, .exploreContainer > .btn:hover {
   display: flex;
 }
 
@@ -142,14 +142,12 @@ a {
   gap: 10px;
   margin: 20px 15px;
 }
-.functioningContainer__cardsContainer > a {
-  width: 100%;
-  position: relative;
-}
 .functioningContainer__steps {
   align-items: center;
   justify-content: unset;
   flex-direction: initial;
+  width: 100%;
+  position: relative;
 }
 .functioningContainer__steps__circle {
   width: 27px;
@@ -165,7 +163,7 @@ a {
   left: -15px;
   z-index: 10;
 }
-.functioningContainer__steps > div {
+.functioningContainer__steps--content {
   align-items: center;
   justify-content: center;
   flex-direction: initial;
@@ -176,6 +174,12 @@ a {
   margin: 10px 0;
   background-color: #f3f3f3;
   box-shadow: 3px 5px 15px #d7d7d7;
+  transition: background 0.2s;
+}
+.functioningContainer__steps--content:hover {
+  cursor: pointer;
+  background: #ffeefa;
+  transition: background 0.2s;
 }
 .functioningContainer__steps i {
   display: block;
@@ -257,14 +261,14 @@ a {
   opacity: 0;
   z-index: 20;
   font-size: 1.8rem;
-  transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in-out;
 }
 .restaurantsContainer__card__plainLikeBtn:hover {
-  transition: all 0.1s ease-out;
+  transition: all 0.1s ease-in-out;
   opacity: 1;
 }
 .restaurantsContainer__card__plainLikeBtn:active {
-  transition: all 0.1s ease-out;
+  transition: all 0.1s ease-in-out;
   opacity: 1;
 }
 
