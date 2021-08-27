@@ -451,23 +451,24 @@ a {
         background-color: #fff;
         border-radius: 15px;
         box-shadow: 0px 6px 10px darken($grey, 10%);
+        overflow: hidden;
         position: relative;
-        animation: hoverOutMenuItems 0.5s ease-in-out;
 
         &__content {
-            width: 90%;
-            min-width: 70%;
-            padding: 10px;           
+            width: 80%;
+            min-width: 50%;
+            padding: 10px;          
         }
         &__title {
             line-height: 30px;
-            font-size: 1.1rem;
+            font-size: 1rem;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
         }
         &__description {
             font-weight: 300;
+            font-size: .8rem;
             line-height: 25px;
             white-space: nowrap;
             overflow: hidden;
@@ -475,47 +476,49 @@ a {
         }
         &__price {
             @include flexMid(flex-end,flex-end,initial);
-            width: 10%;
+            width: 20%;
             font-weight: bold;
             padding: 0 20px 12px 5px;
         }
         &::before {
             content: "\f058";
-            font-family: "FontAwesome";
-            color: transparent;
+            font-family: "Font Awesome 5 Free";
+            color: #fff;
             font-size: 1.7rem;
+            height: 100%;
+            width: 75px;
             position: absolute;
-            @include flexMid();
-            right: 0;
-            top: 25px;
-            animation: hoverOutMenuItems 0.5s;
+            right: -60px;
+            @include flexMid(center,center,row);
+            animation: rotateOutCheck 0.3s;
         }
         &::after {
             content: "";
-            animation: hoverOutMenuItems 0.5s;
+            width: 0;
             background-color: $tertiary-color;
             border-radius: 0 15px 15px 0;
+            transition: width 0.3s;
         }
         &:hover, &:active {
             cursor: pointer;
             &::before {
                 content: "\f058";
-                font-family: "FontAwesome";
+                font-family: "Font Awesome 5 Free";
                 color: #fff;
                 font-size: 1.7rem;
+                height: 100%;
+                width: 75px;
                 position: absolute;
-                width: 90px;
-                @include flexMid();
                 right: 0;
-                top: 25px;
-                animation: hoverInMenuItems 0s ease-out, rotateInCheck 0.5s ease-in-out;
+                @include flexMid();
+                animation: rotateInCheck 0.3s;
             }
             &::after {
                 content: "";
                 background-color: $tertiary-color;
                 width: 100px;
                 border-radius: 0 15px 15px 0;
-                animation: hoverInMenuItems 0.5s ease-out;
+                transition: width 0.3s;
             }
         }
         &--1 {
@@ -536,40 +539,28 @@ a {
 @keyframes apparitionAnim {
     0% {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(40px);
     }
     100% {
         opacity: 1;
         transform: translateY(0);
     }
 }
-@keyframes hoverInMenuItems {
-    from {
-        width: 0;
-        color: transparent;
-    }
-    to {
-        width: 100px;
-        color: #fff;
-    }
-}
-@keyframes hoverOutMenuItems{
-    from {
-        width: 100px;
-        color: #fff;
-    }
-    to {
-        width: 0;
-        color: transparent;
-    }
-}
 @keyframes rotateInCheck {
     from {
         transform: rotate();
-        width: 0;
+        right: -60px;
     }
     to {
         transform: rotate(360deg);
-        width: 90px;
+        right: 0;
+    }
+}
+@keyframes rotateOutCheck {
+    from {
+        right: 0;
+    }
+    to {
+        right: -60px;
     }
 }

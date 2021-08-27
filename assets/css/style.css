@@ -414,23 +414,24 @@ a {
   background-color: #fff;
   border-radius: 15px;
   box-shadow: 0px 6px 10px #d7d7d7;
+  overflow: hidden;
   position: relative;
-  animation: hoverOutMenuItems 0.5s ease-in-out;
 }
 .menuContainer .menuItem__content {
-  width: 90%;
-  min-width: 70%;
+  width: 80%;
+  min-width: 50%;
   padding: 10px;
 }
 .menuContainer .menuItem__title {
   line-height: 30px;
-  font-size: 1.1rem;
+  font-size: 1rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .menuContainer .menuItem__description {
   font-weight: 300;
+  font-size: 0.8rem;
   line-height: 25px;
   white-space: nowrap;
   overflow: hidden;
@@ -440,52 +441,54 @@ a {
   align-items: flex-end;
   justify-content: flex-end;
   flex-direction: initial;
-  width: 10%;
+  width: 20%;
   font-weight: bold;
   padding: 0 20px 12px 5px;
 }
 .menuContainer .menuItem::before {
   content: "";
-  font-family: "FontAwesome";
-  color: transparent;
+  font-family: "Font Awesome 5 Free";
+  color: #fff;
   font-size: 1.7rem;
+  height: 100%;
+  width: 75px;
   position: absolute;
+  right: -60px;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  right: 0;
-  top: 25px;
-  animation: hoverOutMenuItems 0.5s;
+  flex-direction: row;
+  animation: rotateOutCheck 0.3s;
 }
 .menuContainer .menuItem::after {
   content: "";
-  animation: hoverOutMenuItems 0.5s;
+  width: 0;
   background-color: #99e2d0;
   border-radius: 0 15px 15px 0;
+  transition: width 0.3s;
 }
 .menuContainer .menuItem:hover, .menuContainer .menuItem:active {
   cursor: pointer;
 }
 .menuContainer .menuItem:hover::before, .menuContainer .menuItem:active::before {
   content: "";
-  font-family: "FontAwesome";
+  font-family: "Font Awesome 5 Free";
   color: #fff;
   font-size: 1.7rem;
+  height: 100%;
+  width: 75px;
   position: absolute;
-  width: 90px;
+  right: 0;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  right: 0;
-  top: 25px;
-  animation: hoverInMenuItems 0s ease-out, rotateInCheck 0.5s ease-in-out;
+  animation: rotateInCheck 0.3s;
 }
 .menuContainer .menuItem:hover::after, .menuContainer .menuItem:active::after {
   content: "";
   background-color: #99e2d0;
   width: 100px;
   border-radius: 0 15px 15px 0;
-  animation: hoverInMenuItems 0.5s ease-out;
+  transition: width 0.3s;
 }
 .menuContainer .menuItem--1 {
   animation: apparitionAnim 0.5s ease-in 1;
@@ -503,41 +506,29 @@ a {
 @keyframes apparitionAnim {
   0% {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(40px);
   }
   100% {
     opacity: 1;
     transform: translateY(0);
   }
 }
-@keyframes hoverInMenuItems {
-  from {
-    width: 0;
-    color: transparent;
-  }
-  to {
-    width: 100px;
-    color: #fff;
-  }
-}
-@keyframes hoverOutMenuItems {
-  from {
-    width: 100px;
-    color: #fff;
-  }
-  to {
-    width: 0;
-    color: transparent;
-  }
-}
 @keyframes rotateInCheck {
   from {
     transform: rotate();
-    width: 0;
+    right: -60px;
   }
   to {
     transform: rotate(360deg);
-    width: 90px;
+    right: 0;
+  }
+}
+@keyframes rotateOutCheck {
+  from {
+    right: 0;
+  }
+  to {
+    right: -60px;
   }
 }
 
