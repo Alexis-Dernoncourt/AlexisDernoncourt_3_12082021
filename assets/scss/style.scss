@@ -41,6 +41,7 @@ $card-radius: 20px;
     height: 100%;
     font-size: 1.5rem;
     cursor: pointer;
+    opacity: 1;
 }
 
 %btnColor {
@@ -90,31 +91,67 @@ a {
 }
 
 .btn {
-    &__emptyLikeBtn {
-        @extend %likeBtn;
-        z-index: 3;
-        // &:hover {
-        //     display: none;
-        // }
+    @extend %btnColor;
+    @include hoverAnim(all,.2s);
+    &:hover {
+        @extend %btnHover;
+        @include hoverAnim(all,.2s);
     }
-    &__plainLikeBtn {
+    &--emptyLikeBtn {
+        @extend %likeBtn;
+        background-color: #f6f6f6;
+        z-index: 3;
+        @include hoverAnim();
+        &:hover, &:active {
+            @include hoverAnim();
+            opacity: 0;
+        }
+    }
+    &--plainLikeBtn {
         @extend %likeBtn;
         background: $btnHoverColor;
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         color: transparent;
-        bottom: 4.99%;
-        opacity: 0;
-        z-index: 20;
+        z-index: 2;
+    }
+    &--homeEmptyLikeBtn {
+        @extend %likeBtn;
+        position: absolute;
+        background-color: #f6f6f6;
+        right: 15px;
+        bottom: 5%;
+        z-index: 3;
+        height: 15%;
         @include hoverAnim();
-        &:hover {
+        &:hover, &:active {
             @include hoverAnim();
-            opacity: 1;
+            opacity: 0;
         }
-        &:active {
-            @include hoverAnim();
-            opacity: 1;
+    }
+    &--homePlainLikeBtn {
+        @extend %likeBtn;
+        position: absolute;
+        right: 15px;
+        height: 15%;
+        background: $btnHoverColor;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+        bottom: 5%;
+        z-index: 2;
+    }
+    &--menus {
+        position: absolute;
+        right: 0;
+        font-size: 1.8rem;
+    }
+    &--commandBtn {
+        margin: auto 20% 10% 20%;
+        &:hover, &:active {
+            margin: auto 20% 10% 20%;
         }
     }
 }
@@ -190,15 +227,6 @@ a {
         font-weight: 300;
         font-size: 1.05rem;
     }
-
-    > .btn {
-        @extend %btnColor;
-        @include hoverAnim(all,.2s);
-        &:hover {
-            @extend %btnHover;
-            @include hoverAnim(all,.2s);
-        }
-    }
 }
 
 .functioningContainer {
@@ -209,68 +237,67 @@ a {
     &__cardsContainer {
         @include flexMid();
         gap: 10px;
-        //margin: 20px 15px;
-        text-align: center;
+        width: 95%;
+        margin: auto;
     }
 
     &__steps {
         @include flexMid(center,unset,initial);
         width: 100%;
         position: relative;
-
-        &__circle {
-            width: 27px;
-            height: 27px;
-            background-color: $primary-color;
-            border-radius: 50%;
-            color: #fff;
-            font-size: 0.9rem;
-            @include flexMid(center,center,initial);
-            position: absolute;
-            left: -15px;
-            z-index: 10;
-        }
-        .fas {
-            color: darken($grey, 50%);
-            &::before {
-                font-size: 1.2rem;
-                width: 25px;
-                @include flexMid(center, stretch, column);
-            }
-        }
-
-        &--content {
-            @include flexMid(center,center,initial);
-            width: 95vw;
-            height: 75px;
-            border-radius: 20px;
-            margin: 10px 0;
-            background-color: lighten($grey, 1%);
-            box-shadow: 3px 5px 15px darken($grey, 10%);
-            @include hoverAnim(background,.1s);
-            //transition: background .2s;
-
-            &:hover {
-                cursor: pointer;
-                background: lighten($primary-color, 35%);
-                @include hoverAnim(background,.1s);
-                //transition: background .2s;
-                color: $primary-color;
-            }
-        }
-
-        &--text {
-            margin-left: 5%;
-            font-weight: 600;
-            min-width: 180px;
-            color: lighten(#000, 10%);
-            width: 200px;
-            min-width: max-content;
+    }
+    .fas {
+        color: darken($grey, 50%);
+        &::before {
+            font-size: 1.2rem;
+            width: 25px;
+            @include flexMid(center, stretch, column);
             @media screen and (max-width: 360px) {
-                margin-left: 5px;
-                //font-weight: bold;
-                font-size: 0.9rem;
+                margin-left: 15px;
+                font-size: 1rem;
             }
+        }
+    }
+    &__circle {
+        width: 27px;
+        height: 27px;
+        background-color: $primary-color;
+        border-radius: 50%;
+        color: #fff;
+        font-size: 0.8rem;
+        @include flexMid(center,center,initial);
+        position: absolute;
+        left: -12px;
+        z-index: 10;
+    }
+    &__content {
+        @include flexMid(center,center,initial);
+        width: 95vw;
+        height: 75px;
+        border-radius: 20px;
+        margin: 10px 0;
+        background-color: lighten($grey, 1%);
+        box-shadow: 3px 5px 15px darken($grey, 10%);
+        @include hoverAnim(background,.1s);
+
+        &:hover, &:active {
+            cursor: pointer;
+            background: lighten($primary-color, 35%);
+            @include hoverAnim(background,.1s);
+            color: $primary-color;
+        }
+    }
+
+    &__text {
+        margin-left: 5%;
+        font-weight: 600;
+        min-width: 180px;
+        color: lighten(#000, 10%);
+        width: 200px;
+        min-width: max-content;
+        @media screen and (max-width: 360px) {
+            margin-left: 15px;
+            font-size: 0.9rem;
         }
     }
 }
@@ -278,28 +305,6 @@ a {
 .restaurantsContainer {
     padding: 50px 20px;
 
-    &__cardHead {
-        height: 170px;
-        overflow: hidden;
-
-        &__img {
-            object-position: 50% 60%;
-            @include imgPosition;
-            border-radius: 10px 10px 0 0;
-        }
-
-        &__new {
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            border-radius: 2px;
-            padding: 7px 15px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            background-color: $tertiary-color;
-            color: darken($tertiary-color, 40%);
-        }
-    }
     &__card {
         border-radius: 10px;
         margin: 20px 0;
@@ -310,49 +315,40 @@ a {
             transform: scale(1.03);
             @include hoverAnim(transform);
         }
-
         a {
             @include flexMid(initial, initial);
             color: #000;
             height: max-content;
         }
-        &__content {
-            padding: 20px 15px;
-            width: 80%;
-
-            &__subtitle {
-                font-weight: 300;
-                font-size: 1.1rem;
-            }  
-        }
-        &__emptyLikeBtn {
-            @extend %likeBtn;
-            position: absolute;
-            background-color: #f6f6f6;
-            right: 15px;
-            bottom: 5%;
-            z-index: 3;
-            height: 15%;
-            @include hoverAnim();
-            &:hover, &:active {
-                @include hoverAnim();
-                opacity: 0;
-            }
-        }
-        &__plainLikeBtn {
-            @extend %likeBtn;
-            position: absolute;
-            right: 15px;
-            height: 15%;
-            background: $btnHoverColor;
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            color: transparent;
-            bottom: 5%;
-            opacity: 1;
-            z-index: 2;
-        }
+        
+    }
+    &__cardHead {
+        height: 170px;
+        overflow: hidden;  
+    }
+    &__img {
+        object-position: 50% 60%;
+        @include imgPosition;
+        border-radius: 10px 10px 0 0;
+    }
+    &__new {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        border-radius: 2px;
+        padding: 7px 15px;
+        font-size: 0.8rem;
+        font-weight: 500;
+        background-color: $tertiary-color;
+        color: darken($tertiary-color, 40%);
+    }
+    &__content {
+        padding: 20px 15px;
+        width: 80%;  
+    }
+    &__subtitle {
+        font-weight: 300;
+        font-size: 1.1rem;
     }
 }
 
@@ -375,15 +371,19 @@ a {
         color: #fff;
         font-weight: 400;
         margin-bottom: 7px;
-
-        &__icon {
-            width: 10px;
-            font-size: 0.9rem;
-            margin-right: 5px;
-            
-            &--rotate {
-                transform: rotateY(50deg);
-            }
+        @include hoverAnim(color,.1s);
+        &:hover, &:active {
+            color: $tertiary-color;
+            @include hoverAnim(color,.1s);
+        }
+    }
+    &__icon {
+        width: 10px;
+        font-size: 0.9rem;
+        margin-right: 5px;
+        
+        &--rotate {
+            transform: rotateY(50deg);
         }
     }
 }
@@ -405,18 +405,6 @@ a {
     &--img-portrait {
         > .menuContainer__img {
             object-position: center;
-        }
-    }
-
-    .commandBtn {
-        @extend %btnColor;
-        margin: auto 20% 10% 20%;
-        @include hoverAnim(all,.2s);
-
-        &:hover, &:active {
-            @extend %btnHover;
-            margin: auto 20% 10% 20%;
-            @include hoverAnim(all,.2s);
         }
     }
     &__secondaryTitle {
@@ -448,15 +436,7 @@ a {
         font-family: $main-font;
         height: 50px;
         font-size: 0.8rem;
-    }
-    &__emptyLikeBtn {
-        height: 100%;
-        @include flexMid(center,center,initial);
-        font-size: 1.8rem;
-        cursor: pointer;
-    }
-    &__plainLikeBtn {
-        display: none;
+        position: relative;
     }
 
     .menuItem {

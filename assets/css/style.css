@@ -1,4 +1,4 @@
-.restaurantsContainer__card__plainLikeBtn, .restaurantsContainer__card__emptyLikeBtn, .btn__plainLikeBtn, .btn__emptyLikeBtn {
+.btn--homePlainLikeBtn, .btn--homeEmptyLikeBtn, .btn--plainLikeBtn, .btn--emptyLikeBtn {
   align-items: center;
   justify-content: center;
   flex-direction: initial;
@@ -6,9 +6,10 @@
   height: 100%;
   font-size: 1.5rem;
   cursor: pointer;
+  opacity: 1;
 }
 
-.menuContainer .commandBtn, .exploreContainer > .btn, .menuContainer .commandBtn:hover, .menuContainer .commandBtn:active, .exploreContainer > .btn:hover {
+.btn, .btn:hover {
   align-items: center;
   justify-content: center;
   flex-direction: initial;
@@ -23,13 +24,13 @@
   text-decoration: none;
 }
 
-.menuContainer .commandBtn:hover, .menuContainer .commandBtn:active, .exploreContainer > .btn:hover {
+.btn:hover {
   background: linear-gradient(170deg, #a16be0 0%, #ff93e1 100%);
   box-shadow: 0px 2px 7px #ccc;
   font-weight: 600;
 }
 
-.menuContainer .menuItem__price, .menuContainer .menuItem, .menuContainer__emptyLikeBtn, .menuContainer__mainTitleContainer, .menuContainer__contentContainer, .footerContainer, .restaurantsContainer__card a, .functioningContainer__steps--content, .functioningContainer__steps .fas::before, .functioningContainer__steps__circle, .functioningContainer__steps, .functioningContainer__cardsContainer, .exploreContainer, .searchForm form label span, .searchForm form, .searchForm, .headerContainer, body, .restaurantsContainer__card__plainLikeBtn, .restaurantsContainer__card__emptyLikeBtn, .btn__plainLikeBtn, .btn__emptyLikeBtn, .menuContainer .commandBtn, .exploreContainer > .btn, .menuContainer .commandBtn:hover, .menuContainer .commandBtn:active, .exploreContainer > .btn:hover {
+.menuContainer .menuItem__price, .menuContainer .menuItem, .menuContainer__mainTitleContainer, .menuContainer__contentContainer, .footerContainer, .restaurantsContainer__card a, .functioningContainer__content, .functioningContainer__circle, .functioningContainer .fas::before, .functioningContainer__steps, .functioningContainer__cardsContainer, .exploreContainer, .searchForm form label span, .searchForm form, .searchForm, .headerContainer, body, .btn--homePlainLikeBtn, .btn--homeEmptyLikeBtn, .btn--plainLikeBtn, .btn--emptyLikeBtn, .btn, .btn:hover {
   display: flex;
 }
 
@@ -54,27 +55,64 @@ a {
   color: unset;
 }
 
-.btn__emptyLikeBtn {
-  z-index: 3;
+.btn {
+  transition: all 0.2s ease-in-out;
 }
-.btn__plainLikeBtn {
+.btn:hover {
+  transition: all 0.2s ease-in-out;
+}
+.btn--emptyLikeBtn {
+  background-color: #f6f6f6;
+  z-index: 3;
+  transition: all 0.1s ease-in-out;
+}
+.btn--emptyLikeBtn:hover, .btn--emptyLikeBtn:active {
+  transition: all 0.1s ease-in-out;
+  opacity: 0;
+}
+.btn--plainLikeBtn {
   background: linear-gradient(170deg, #a16be0 0%, #ff93e1 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
-  bottom: 4.99%;
+  z-index: 2;
+}
+.btn--homeEmptyLikeBtn {
+  position: absolute;
+  background-color: #f6f6f6;
+  right: 15px;
+  bottom: 5%;
+  z-index: 3;
+  height: 15%;
+  transition: all 0.1s ease-in-out;
+}
+.btn--homeEmptyLikeBtn:hover, .btn--homeEmptyLikeBtn:active {
+  transition: all 0.1s ease-in-out;
   opacity: 0;
-  z-index: 20;
-  transition: all 0.1s ease-in-out;
 }
-.btn__plainLikeBtn:hover {
-  transition: all 0.1s ease-in-out;
-  opacity: 1;
+.btn--homePlainLikeBtn {
+  position: absolute;
+  right: 15px;
+  height: 15%;
+  background: linear-gradient(170deg, #a16be0 0%, #ff93e1 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  bottom: 5%;
+  z-index: 2;
 }
-.btn__plainLikeBtn:active {
-  transition: all 0.1s ease-in-out;
-  opacity: 1;
+.btn--menus {
+  position: absolute;
+  right: 0;
+  font-size: 1.8rem;
+}
+.btn--commandBtn {
+  margin: auto 20% 10% 20%;
+}
+.btn--commandBtn:hover, .btn--commandBtn:active {
+  margin: auto 20% 10% 20%;
 }
 
 .headerContainer {
@@ -151,12 +189,6 @@ a {
   font-weight: 300;
   font-size: 1.05rem;
 }
-.exploreContainer > .btn {
-  transition: all 0.2s ease-in-out;
-}
-.exploreContainer > .btn:hover {
-  transition: all 0.2s ease-in-out;
-}
 
 .functioningContainer {
   background-color: #fff;
@@ -168,7 +200,8 @@ a {
   justify-content: center;
   flex-direction: column;
   gap: 10px;
-  text-align: center;
+  width: 95%;
+  margin: auto;
 }
 .functioningContainer__steps {
   align-items: center;
@@ -177,31 +210,37 @@ a {
   width: 100%;
   position: relative;
 }
-.functioningContainer__steps__circle {
-  width: 27px;
-  height: 27px;
-  background-color: #9356dc;
-  border-radius: 50%;
-  color: #fff;
-  font-size: 0.9rem;
-  align-items: center;
-  justify-content: center;
-  flex-direction: initial;
-  position: absolute;
-  left: -15px;
-  z-index: 10;
-}
-.functioningContainer__steps .fas {
+.functioningContainer .fas {
   color: #717171;
 }
-.functioningContainer__steps .fas::before {
+.functioningContainer .fas::before {
   font-size: 1.2rem;
   width: 25px;
   align-items: center;
   justify-content: stretch;
   flex-direction: column;
 }
-.functioningContainer__steps--content {
+@media screen and (max-width: 360px) {
+  .functioningContainer .fas::before {
+    margin-left: 15px;
+    font-size: 1rem;
+  }
+}
+.functioningContainer__circle {
+  width: 27px;
+  height: 27px;
+  background-color: #9356dc;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 0.8rem;
+  align-items: center;
+  justify-content: center;
+  flex-direction: initial;
+  position: absolute;
+  left: -12px;
+  z-index: 10;
+}
+.functioningContainer__content {
   align-items: center;
   justify-content: center;
   flex-direction: initial;
@@ -213,13 +252,13 @@ a {
   box-shadow: 3px 5px 15px #d7d7d7;
   transition: background 0.1s ease-in-out;
 }
-.functioningContainer__steps--content:hover {
+.functioningContainer__content:hover, .functioningContainer__content:active {
   cursor: pointer;
   background: #f2eafb;
   transition: background 0.1s ease-in-out;
   color: #9356dc;
 }
-.functioningContainer__steps--text {
+.functioningContainer__text {
   margin-left: 5%;
   font-weight: 600;
   min-width: 180px;
@@ -228,36 +267,14 @@ a {
   min-width: max-content;
 }
 @media screen and (max-width: 360px) {
-  .functioningContainer__steps--text {
-    margin-left: 5px;
+  .functioningContainer__text {
+    margin-left: 15px;
     font-size: 0.9rem;
   }
 }
 
 .restaurantsContainer {
   padding: 50px 20px;
-}
-.restaurantsContainer__cardHead {
-  height: 170px;
-  overflow: hidden;
-}
-.restaurantsContainer__cardHead__img {
-  object-position: 50% 60%;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px 10px 0 0;
-}
-.restaurantsContainer__cardHead__new {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  border-radius: 2px;
-  padding: 7px 15px;
-  font-size: 0.8rem;
-  font-weight: 500;
-  background-color: #99e2d0;
-  color: #278870;
 }
 .restaurantsContainer__card {
   border-radius: 10px;
@@ -277,39 +294,35 @@ a {
   color: #000;
   height: max-content;
 }
-.restaurantsContainer__card__content {
+.restaurantsContainer__cardHead {
+  height: 170px;
+  overflow: hidden;
+}
+.restaurantsContainer__img {
+  object-position: 50% 60%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+.restaurantsContainer__new {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  border-radius: 2px;
+  padding: 7px 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  background-color: #99e2d0;
+  color: #278870;
+}
+.restaurantsContainer__content {
   padding: 20px 15px;
   width: 80%;
 }
-.restaurantsContainer__card__content__subtitle {
+.restaurantsContainer__subtitle {
   font-weight: 300;
   font-size: 1.1rem;
-}
-.restaurantsContainer__card__emptyLikeBtn {
-  position: absolute;
-  background-color: #f6f6f6;
-  right: 15px;
-  bottom: 5%;
-  z-index: 3;
-  height: 15%;
-  transition: all 0.1s ease-in-out;
-}
-.restaurantsContainer__card__emptyLikeBtn:hover, .restaurantsContainer__card__emptyLikeBtn:active {
-  transition: all 0.1s ease-in-out;
-  opacity: 0;
-}
-.restaurantsContainer__card__plainLikeBtn {
-  position: absolute;
-  right: 15px;
-  height: 15%;
-  background: linear-gradient(170deg, #a16be0 0%, #ff93e1 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-  bottom: 5%;
-  opacity: 1;
-  z-index: 2;
 }
 
 .footerContainer {
@@ -330,13 +343,18 @@ a {
   color: #fff;
   font-weight: 400;
   margin-bottom: 7px;
+  transition: color 0.1s ease-in-out;
 }
-.footerContainer__link__icon {
+.footerContainer__link:hover, .footerContainer__link:active {
+  color: #99e2d0;
+  transition: color 0.1s ease-in-out;
+}
+.footerContainer__icon {
   width: 10px;
   font-size: 0.9rem;
   margin-right: 5px;
 }
-.footerContainer__link__icon--rotate {
+.footerContainer__icon--rotate {
   transform: rotateY(50deg);
 }
 
@@ -354,14 +372,6 @@ a {
 }
 .menuContainer--img-portrait > .menuContainer__img {
   object-position: center;
-}
-.menuContainer .commandBtn {
-  margin: auto 20% 10% 20%;
-  transition: all 0.2s ease-in-out;
-}
-.menuContainer .commandBtn:hover, .menuContainer .commandBtn:active {
-  margin: auto 20% 10% 20%;
-  transition: all 0.2s ease-in-out;
 }
 .menuContainer__secondaryTitle {
   text-transform: uppercase;
@@ -394,17 +404,7 @@ a {
   font-family: "Shrikhand", cursive;
   height: 50px;
   font-size: 0.8rem;
-}
-.menuContainer__emptyLikeBtn {
-  height: 100%;
-  align-items: center;
-  justify-content: center;
-  flex-direction: initial;
-  font-size: 1.8rem;
-  cursor: pointer;
-}
-.menuContainer__plainLikeBtn {
-  display: none;
+  position: relative;
 }
 .menuContainer .menuItem {
   align-items: stretch;
