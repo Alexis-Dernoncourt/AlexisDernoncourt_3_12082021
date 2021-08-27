@@ -1,5 +1,5 @@
 @charset "UTF-8";
-.btn--homePlainLikeBtn, .btn--homeEmptyLikeBtn, .btn--plainLikeBtn, .btn--emptyLikeBtn {
+.btn__homePlainLikeBtn, .btn__homeEmptyLikeBtn, .btn__plainLikeBtn, .btn__emptyLikeBtn {
   align-items: center;
   justify-content: center;
   flex-direction: initial;
@@ -31,7 +31,7 @@
   font-weight: 600;
 }
 
-.menuContainer .menuItem:hover::before, .menuContainer .menuItem:active::before, .menuContainer .menuItem::before, .menuContainer .menuItem__price, .menuContainer .menuItem, .menuContainer__mainTitleContainer, .menuContainer__contentContainer, .footerContainer, .restaurantsContainer__card a, .functioningContainer__content, .functioningContainer__circle, .functioningContainer .fas::before, .functioningContainer__steps, .functioningContainer__cardsContainer, .exploreContainer, .searchForm form label span, .searchForm form, .searchForm, .headerContainer, body, .btn--homePlainLikeBtn, .btn--homeEmptyLikeBtn, .btn--plainLikeBtn, .btn--emptyLikeBtn, .btn, .btn:hover {
+.menuContainer .menuItem:hover::before, .menuContainer .menuItem:active::before, .menuContainer .menuItem::before, .menuContainer .menuItem__price, .menuContainer .menuItem, .menuContainer__mainTitleContainer, .menuContainer__contentContainer, .footerContainer, .restaurantsContainer__card a, .functioningContainer__content, .functioningContainer__circle, .functioningContainer .fas::before, .functioningContainer__steps, .functioningContainer__cardsContainer, .exploreContainer, .searchForm form label span, .searchForm form, .searchForm, .headerContainer, body, .btn__homePlainLikeBtn, .btn__homeEmptyLikeBtn, .btn__plainLikeBtn, .btn__emptyLikeBtn, .btn, .btn:hover {
   display: flex;
 }
 
@@ -62,16 +62,16 @@ a {
 .btn:hover {
   transition: all 0.2s ease-in-out;
 }
-.btn--emptyLikeBtn {
+.btn__emptyLikeBtn {
   background-color: #f6f6f6;
   z-index: 3;
   transition: all 0.1s ease-in-out;
 }
-.btn--emptyLikeBtn:hover, .btn--emptyLikeBtn:active {
+.btn__emptyLikeBtn:hover, .btn__emptyLikeBtn:active {
   transition: all 0.1s ease-in-out;
   opacity: 0;
 }
-.btn--plainLikeBtn {
+.btn__plainLikeBtn {
   background: linear-gradient(170deg, #a16be0 0%, #ff93e1 100%);
   background-clip: text;
   -webkit-background-clip: text;
@@ -79,7 +79,7 @@ a {
   color: transparent;
   z-index: 2;
 }
-.btn--homeEmptyLikeBtn {
+.btn__homeEmptyLikeBtn {
   position: absolute;
   background-color: #f6f6f6;
   right: 15px;
@@ -88,11 +88,11 @@ a {
   height: 15%;
   transition: all 0.1s ease-in-out;
 }
-.btn--homeEmptyLikeBtn:hover, .btn--homeEmptyLikeBtn:active {
+.btn__homeEmptyLikeBtn:hover, .btn__homeEmptyLikeBtn:active {
   transition: all 0.1s ease-in-out;
   opacity: 0;
 }
-.btn--homePlainLikeBtn {
+.btn__homePlainLikeBtn {
   position: absolute;
   right: 15px;
   height: 15%;
@@ -431,7 +431,7 @@ a {
 }
 .menuContainer .menuItem__description {
   font-weight: 300;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   line-height: 25px;
   white-space: nowrap;
   overflow: hidden;

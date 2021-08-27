@@ -100,7 +100,7 @@ a {
         @extend %btnHover;
         @include hoverAnim(all,.2s);
     }
-    &--emptyLikeBtn {
+    &__emptyLikeBtn {
         @extend %likeBtn;
         background-color: #f6f6f6;
         z-index: 3;
@@ -110,7 +110,7 @@ a {
             opacity: 0;
         }
     }
-    &--plainLikeBtn {
+    &__plainLikeBtn {
         @extend %likeBtn;
         background: $btnHoverColor;
         background-clip: text;
@@ -119,7 +119,7 @@ a {
         color: transparent;
         z-index: 2;
     }
-    &--homeEmptyLikeBtn {
+    &__homeEmptyLikeBtn {
         @extend %likeBtn;
         position: absolute;
         background-color: #f6f6f6;
@@ -133,7 +133,7 @@ a {
             opacity: 0;
         }
     }
-    &--homePlainLikeBtn {
+    &__homePlainLikeBtn {
         @extend %likeBtn;
         position: absolute;
         right: 15px;
@@ -468,7 +468,7 @@ a {
         }
         &__description {
             font-weight: 300;
-            font-size: .8rem;
+            font-size: .9rem;
             line-height: 25px;
             white-space: nowrap;
             overflow: hidden;
