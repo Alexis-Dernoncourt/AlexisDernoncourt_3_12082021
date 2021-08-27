@@ -455,11 +455,11 @@ a {
   flex-direction: column;
   right: 0;
   top: 25px;
-  animation: hoverOutMenuItems 0.5s ease-in-out;
+  animation: hoverOutMenuItems 0.5s;
 }
 .menuContainer .menuItem::after {
   content: "";
-  animation: hoverOutMenuItems 0.5s ease-in-out;
+  animation: hoverOutMenuItems 0.5s;
   background-color: #99e2d0;
   border-radius: 0 15px 15px 0;
 }
@@ -478,7 +478,7 @@ a {
   flex-direction: column;
   right: 0;
   top: 25px;
-  animation: hoverInMenuItems 0.5s ease-out, rotateInCheck 0.5s ease-in-out;
+  animation: hoverInMenuItems 0s ease-out, rotateInCheck 0.5s ease-in-out;
 }
 .menuContainer .menuItem:hover::after, .menuContainer .menuItem:active::after {
   content: "";
@@ -495,6 +495,9 @@ a {
 }
 .menuContainer .menuItem--3 {
   animation: apparitionAnim 1.1s ease-in-out 1;
+}
+.menuContainer .menuItem--4 {
+  animation: apparitionAnim 1.3s ease-in-out 1;
 }
 
 @keyframes apparitionAnim {
