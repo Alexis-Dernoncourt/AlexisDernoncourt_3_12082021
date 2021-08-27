@@ -235,15 +235,17 @@ a {
     width: 100vw;
 
     &__cardsContainer {
-        @include flexMid();
+        @include flexMid(center,unset,column);
         gap: 10px;
         width: 95%;
         margin: auto;
+        //position: relative;
     }
-
     &__steps {
+        //position: absolute;
+        //right: 0;
         @include flexMid(center,unset,initial);
-        width: 100%;
+        width: 96%;
         position: relative;
     }
     .fas {
@@ -253,7 +255,7 @@ a {
             width: 25px;
             @include flexMid(center, stretch, column);
             @media screen and (max-width: 360px) {
-                margin-left: 15px;
+                margin-left: 20px;
                 font-size: 1rem;
             }
         }
@@ -267,7 +269,7 @@ a {
         font-size: 0.8rem;
         @include flexMid(center,center,initial);
         position: absolute;
-        left: -12px;
+        left: -10px;
         z-index: 10;
     }
     &__content {
@@ -279,7 +281,6 @@ a {
         background-color: lighten($grey, 1%);
         box-shadow: 3px 5px 15px darken($grey, 10%);
         @include hoverAnim(background,.1s);
-
         &:hover, &:active {
             cursor: pointer;
             background: lighten($primary-color, 35%);
@@ -296,7 +297,7 @@ a {
         width: 200px;
         min-width: max-content;
         @media screen and (max-width: 360px) {
-            margin-left: 15px;
+            margin-left: 10px;
             font-size: 0.9rem;
         }
     }

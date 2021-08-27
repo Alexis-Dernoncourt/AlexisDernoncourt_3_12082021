@@ -197,7 +197,7 @@ a {
 }
 .functioningContainer__cardsContainer {
   align-items: center;
-  justify-content: center;
+  justify-content: unset;
   flex-direction: column;
   gap: 10px;
   width: 95%;
@@ -207,7 +207,7 @@ a {
   align-items: center;
   justify-content: unset;
   flex-direction: initial;
-  width: 100%;
+  width: 96%;
   position: relative;
 }
 .functioningContainer .fas {
@@ -222,7 +222,7 @@ a {
 }
 @media screen and (max-width: 360px) {
   .functioningContainer .fas::before {
-    margin-left: 15px;
+    margin-left: 20px;
     font-size: 1rem;
   }
 }
@@ -237,7 +237,7 @@ a {
   justify-content: center;
   flex-direction: initial;
   position: absolute;
-  left: -12px;
+  left: -10px;
   z-index: 10;
 }
 .functioningContainer__content {
@@ -268,7 +268,7 @@ a {
 }
 @media screen and (max-width: 360px) {
   .functioningContainer__text {
-    margin-left: 15px;
+    margin-left: 10px;
     font-size: 0.9rem;
   }
 }
