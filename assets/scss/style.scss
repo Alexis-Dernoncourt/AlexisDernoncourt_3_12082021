@@ -165,13 +165,21 @@ a {
     background-color: #fff;
     box-shadow: 0 2px 5px #ccc;
     z-index: 100;
+    position: relative;
 
     &__logo {
         width: 150px;
     }
-
     &--noShadow {
         box-shadow: unset;
+    }
+    &__backToHome {
+        position: absolute;
+        left: 20px;
+        font-size: 1.5rem;
+        width: 30px;
+        height: 30px;
+        @include flexMid();
     }
 }
 

@@ -31,7 +31,7 @@
   font-weight: 600;
 }
 
-.menuContainer .menuItem:hover::before, .menuContainer .menuItem:active::before, .menuContainer .menuItem::before, .menuContainer .menuItem__price, .menuContainer .menuItem, .menuContainer__mainTitleContainer, .menuContainer__contentContainer, .footerContainer, .restaurantsContainer__card a, .functioningContainer__content, .functioningContainer__circle, .functioningContainer .fas::before, .functioningContainer__steps, .functioningContainer__cardsContainer, .exploreContainer, .searchForm form label span, .searchForm form, .searchForm, .headerContainer, body, .btn__homePlainLikeBtn, .btn__homeEmptyLikeBtn, .btn__plainLikeBtn, .btn__emptyLikeBtn, .btn, .btn:hover {
+.menuContainer .menuItem:hover::before, .menuContainer .menuItem:active::before, .menuContainer .menuItem::before, .menuContainer .menuItem__price, .menuContainer .menuItem, .menuContainer__mainTitleContainer, .menuContainer__contentContainer, .footerContainer, .restaurantsContainer__card a, .functioningContainer__content, .functioningContainer__circle, .functioningContainer .fas::before, .functioningContainer__steps, .functioningContainer__cardsContainer, .exploreContainer, .searchForm form label span, .searchForm form, .searchForm, .headerContainer__backToHome, .headerContainer, body, .btn__homePlainLikeBtn, .btn__homeEmptyLikeBtn, .btn__plainLikeBtn, .btn__emptyLikeBtn, .btn, .btn:hover {
   display: flex;
 }
 
@@ -124,12 +124,23 @@ a {
   background-color: #fff;
   box-shadow: 0 2px 5px #ccc;
   z-index: 100;
+  position: relative;
 }
 .headerContainer__logo {
   width: 150px;
 }
 .headerContainer--noShadow {
   box-shadow: unset;
+}
+.headerContainer__backToHome {
+  position: absolute;
+  left: 20px;
+  font-size: 1.5rem;
+  width: 30px;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .searchForm {
