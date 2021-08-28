@@ -361,18 +361,21 @@ a {
     padding: 30px 20px;
     background-color: rgb(53, 53, 53);
     color: #fff;
-
+    &__logoContainer {
+        height: 100%;
+        width: max-content;
+    }
     &__logo {
-        
+        margin-bottom: 15px;
+        width: 100px;
         &--invert {
             filter: invert(1);
-            margin-bottom: 15px;
-            width: 100px;
         }
     }
     &__link {
         text-decoration: none;
         color: #fff;
+        width: max-content;
         font-weight: 400;
         margin-bottom: 7px;
         @include hoverAnim(color,.1s);

@@ -334,14 +334,21 @@ a {
   background-color: #353535;
   color: #fff;
 }
-.footerContainer__logo--invert {
-  filter: invert(1);
+.footerContainer__logoContainer {
+  height: 100%;
+  width: max-content;
+}
+.footerContainer__logo {
   margin-bottom: 15px;
   width: 100px;
+}
+.footerContainer__logo--invert {
+  filter: invert(1);
 }
 .footerContainer__link {
   text-decoration: none;
   color: #fff;
+  width: max-content;
   font-weight: 400;
   margin-bottom: 7px;
   transition: color 0.1s ease-in-out;
