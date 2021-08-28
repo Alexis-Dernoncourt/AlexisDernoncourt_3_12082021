@@ -192,7 +192,7 @@ a {
         z-index: 3;
         transform: scale(0.3);
         transition: all .2s;
-        &:hover {
+        &:hover, &:active {
             transform: scale(1.1);
             background: $btnHoverColor;
             background-clip: text;
