@@ -135,25 +135,30 @@ a {
   background-color: #f6f6f6;
   right: 15px;
   bottom: 5%;
-  z-index: 3;
+  z-index: 2;
   height: 15%;
   transition: all 0.1s ease-in-out;
 }
 .btn__homeEmptyLikeBtn:hover, .btn__homeEmptyLikeBtn:active {
   transition: all 0.1s ease-in-out;
-  opacity: 0;
 }
 .btn__homePlainLikeBtn {
   position: absolute;
   right: 15px;
   height: 15%;
+  color: transparent;
+  bottom: 5%;
+  z-index: 3;
+  transform: scale(0.3);
+  transition: all 0.2s;
+}
+.btn__homePlainLikeBtn:hover {
+  transform: scale(1.1);
   background: linear-gradient(170deg, #a16be0 0%, #ff93e1 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  color: transparent;
-  bottom: 5%;
-  z-index: 2;
+  transition: all 0.2s;
 }
 .btn__menus {
   position: absolute;
