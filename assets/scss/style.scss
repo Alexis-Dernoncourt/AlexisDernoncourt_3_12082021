@@ -87,6 +87,7 @@ body {
     flex-direction: column;
     font-family: $secondary-font;
     background-color: rgb(246, 246, 246);
+    position: relative;
 }
 
 .loader {
@@ -94,19 +95,18 @@ body {
     position: absolute;
     z-index: 20;
     background: rgb(246, 246, 246);
-    height: 100vh;
     width: 100vw;
-    @include flexMid(flex-start,center,row);
-    padding-top: 250px;
+    @include flexMid(unset,center,row);
     animation: displayLoader 2s;
 }
-.animaLoaderContainer {
+.animLoaderContainer {
     @include flexMid(center,center,row);
+    position: fixed;
     width: 50px;
+    top: 50%;
     height: 10px;
     border-radius: 50%;
     //border: 1px solid black;
-    position: relative;
 }
 .animLoading {
     position: absolute;
@@ -114,7 +114,7 @@ body {
     border-radius: 50%;
     width: 10px;
     height: 10px;
-    animation: turnTheLoaderBullet1 0.4s infinite;
+    animation: turnTheLoaderBullet1 0.4s ease 3;
 }
 .animLoading2 {
     position: absolute;
@@ -122,7 +122,7 @@ body {
     border-radius: 50px;
     width: 10px;
     height: 10px;
-    animation: turnTheLoaderBullet2 8s infinite;
+    animation: turnTheLoaderBullet2 0.8s ease 3;
 }
 .animLoading3 {
     position: absolute;
@@ -130,7 +130,7 @@ body {
     border-radius: 50px;
     width: 10px;
     height: 10px;
-    animation: turnTheLoaderBullet3 0.6s infinite;
+    animation: turnTheLoaderBullet3 0.6s ease 3;
 }
 
 a {
@@ -595,11 +595,11 @@ a {
 @keyframes displayLoader {
     0% {
         visibility: visible;
-        height: 100vh;
+        height: 100%;
     }
     100% {
         visibility: visible;
-        height: 100vh;
+        height: 100%;
     }
 }
 
