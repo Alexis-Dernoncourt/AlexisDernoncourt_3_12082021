@@ -146,10 +146,14 @@ a {
   position: absolute;
   right: 15px;
   height: 15%;
+  background: #fff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   color: transparent;
   bottom: 5%;
   z-index: 3;
-  transform: scale(0.3);
+  transform: scale(0.4);
   transition: all 0.2s;
 }
 .btn__homePlainLikeBtn:hover, .btn__homePlainLikeBtn:active {
@@ -192,7 +196,7 @@ a {
 .headerContainer__backToHome {
   position: absolute;
   left: 20px;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   width: 30px;
   height: 30px;
   align-items: center;
