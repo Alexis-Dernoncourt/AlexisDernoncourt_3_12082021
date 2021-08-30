@@ -1,0 +1,80 @@
+.loader {
+    visibility: hidden;
+    position: absolute;
+    z-index: 20;
+    background: rgba(246, 246, 246, 0.9);
+    width: 100vw;
+    @include flexMid(unset,center,row);
+    animation: displayLoader 2s;
+}
+.animLoaderContainer {
+    @include flexMid(center,center,row);
+    position: fixed;
+    width: 50px;
+    top: 50%;
+    height: 10px;
+    border-radius: 50%;
+}
+.animLoading {
+    position: absolute;
+    background: $primary-lighten-color;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    animation: moveTheLoaderBullet1 0.5s linear 5;
+}
+.animLoading2 {
+    @extend .animLoading;
+    background: $secondary-color;
+    animation: moveTheLoaderBullet2 0.5s linear 5;
+}
+.animLoading3 {
+    @extend .animLoading;
+    background: $primary-color;
+    animation: moveTheLoaderBullet3 0.5s linear 5;
+}
+
+@keyframes displayLoader {
+    0% {
+        visibility: visible;
+        height: 100%;
+    }
+    100% {
+        visibility: visible;
+        height: 100%;
+    }
+}
+
+@keyframes moveTheLoaderBullet1 {
+    0% {
+        left: 0;
+    }
+    50% {
+        top: 0;
+    }
+    100% {
+        right: 0;
+    }
+}
+@keyframes moveTheLoaderBullet2 {
+    0% {
+        top: 0;
+    }
+    50% {
+       right: 0;
+    }
+    100% {
+        left: 0;
+    }
+}
+@keyframes moveTheLoaderBullet3 {
+    0% {
+        right: 0;
+    }
+    50% {
+        left: 0;
+    }
+    100% {
+        top: 0;
+    }
+}

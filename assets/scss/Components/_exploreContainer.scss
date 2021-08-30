@@ -1,0 +1,16 @@
+.exploreContainer {
+    @include flexMid();
+    padding: 30px;
+    text-align: center;
+
+    &__title {
+        font-weight: 700;
+        margin-bottom: 10px;
+        padding: 0 30px;
+    }
+
+    &__description {
+        font-weight: 300;
+        font-size: 1.05rem;
+    }
+}

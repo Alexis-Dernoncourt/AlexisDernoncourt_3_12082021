@@ -1,0 +1,17 @@
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    @extend %flex;
+    flex-direction: column;
+    font-family: $secondary-font;
+    background-color: rgb(246, 246, 246);
+    position: relative;
+}

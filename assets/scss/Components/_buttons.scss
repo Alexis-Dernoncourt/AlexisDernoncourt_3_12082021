@@ -1,0 +1,68 @@
+a {
+    text-decoration: none;
+    color: unset;
+}
+
+.btn {
+    @extend %btnColor;
+    @include hoverAnim(all,.2s);
+    &:hover {
+        @extend %btnHover;
+        @include hoverAnim(all,.2s);
+    }
+    &__emptyLikeBtn {
+        @extend %likeBtn;
+        background-color: #f6f6f6;
+        z-index: 2;
+    }
+    &__plainLikeBtn {
+        @extend %likeBtn;
+        background: #f6f6f6;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+        z-index: 3;
+        transform: scale(0.4);
+        transition: all .2s;
+        &:hover, &:active {
+            transform: scale(1.15);
+            right: -1px;
+            background: $btnHoverColor;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: all .2s;
+        }
+    }
+    &__homeEmptyLikeBtn {
+        @extend .btn__emptyLikeBtn;
+        @extend %likeBtnHomePosition;
+    }
+    &__homePlainLikeBtn {
+        @extend .btn__plainLikeBtn;
+        @extend %likeBtnHomePosition;
+        &:hover, &:active {
+            right: 15px;
+        }
+    }
+    &__menus {
+        position: absolute;
+        right: 0;
+        font-size: 1.8rem;
+    }
+    &--commandBtn {
+        margin: auto 20% 10% 20%;
+        &:hover, &:active {
+            margin: auto 20% 10% 20%;
+            @media screen and (min-width: 1200px) {
+                width: 20vw;
+                margin: 7vh auto;
+            }
+        }
+        @media screen and (min-width: 1200px) {
+            width: 20vw;
+            margin: 7vh auto;
+        }
+    }
+}

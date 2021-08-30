@@ -1,0 +1,66 @@
+.restaurantsContainer {
+    padding: 50px 20px;
+    @media screen and (min-width: 1200px) {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 100px 15vw;
+        gap: 50px;
+    }
+
+    &__mainTitle {
+        @media screen and (min-width: 1200px) {
+            width: 100%;
+            text-align: center;
+        }
+    }
+    &__card {
+        border-radius: 10px;
+        margin: 20px 0;
+        box-shadow: 0px 0px 10px darken($grey, 10%);
+        position: relative;
+        @include hoverAnim(transform);
+        &:hover, &:active {
+            transform: scale(1.03);
+            @include hoverAnim(transform);
+        }
+        a {
+            @include flexMid(initial, initial);
+            color: #000;
+            height: max-content;
+        }
+        @media screen and (min-width: 1200px) {
+            width: 30vw;
+            margin: 0;
+        }
+        
+    }
+    &__cardHead {
+        height: 170px;
+        overflow: hidden;  
+    }
+    &__img {
+        object-position: 50% 60%;
+        @include imgPosition;
+        border-radius: 10px 10px 0 0;
+    }
+    &__new {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        border-radius: 2px;
+        padding: 7px 15px;
+        font-size: 0.8rem;
+        font-weight: 500;
+        background-color: $tertiary-color;
+        color: darken($tertiary-color, 40%);
+    }
+    &__content {
+        padding: 20px 25px;
+        width: 80%;  
+    }
+    &__subtitle {
+        font-weight: 300;
+        font-size: 1.1rem;
+    }
+}

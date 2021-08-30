@@ -1,0 +1,20 @@
+@mixin flexMid($align:center, $justify:center, $direction:column) {
+    @extend %flex;
+    align-items: $align;
+    justify-content: $justify;
+    flex-direction: $direction;
+}
+
+@mixin imgPosition {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@mixin hoverAnim($props:all, $time:.1s) {
+    transition: $props $time ease-in-out;
+}
+
+@mixin animationMenus($time, $ease) {
+    animation: apparitionAnim $time $ease 1;
+}

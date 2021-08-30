@@ -1,0 +1,87 @@
+.functioningContainer {
+    background-color: #fff;
+    padding: 50px 20px;
+    width: 100%;
+
+    &__mainTitle {
+        @media screen and (min-width: 1200px) {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+    }
+
+    &__cardsContainer {
+        @include flexMid(center,unset,column);
+        gap: 10px;
+        width: 95%;
+        margin: auto;
+        @media screen and (min-width: 1200px) {
+            @include flexMid(center,center,row);
+            gap: 35px;
+        }
+    }
+    &__steps {
+        //position: absolute;
+        //right: 0;
+        @include flexMid(center,unset,initial);
+        width: 96%;
+        position: relative;
+        @media screen and (min-width: 1200px) {
+            @include flexMid(center,unset,initial);
+            width: 25%;
+        }
+    }
+    .fas {
+        color: darken($grey, 50%);
+        &::before {
+            font-size: 1.2rem;
+            width: 25px;
+            @include flexMid(center, stretch, column);
+            @media screen and (max-width: 360px) {
+                margin-left: 20px;
+                font-size: 1rem;
+            }
+        }
+    }
+    &__circle {
+        width: 27px;
+        height: 27px;
+        background-color: $primary-color;
+        border-radius: 50%;
+        color: #fff;
+        font-size: 0.8rem;
+        @include flexMid(center,center,initial);
+        position: absolute;
+        left: -10px;
+        z-index: 10;
+    }
+    &__content {
+        @include flexMid(center,center,initial);
+        width: 95vw;
+        height: 75px;
+        border-radius: 20px;
+        margin: 10px 0;
+        background-color: lighten($grey, 1%);
+        box-shadow: 3px 5px 15px darken($grey, 10%);
+        @include hoverAnim(background,.1s);
+        &:hover, &:active {
+            cursor: pointer;
+            background: lighten($primary-color, 35%);
+            @include hoverAnim(background,.1s);
+            color: $primary-color;
+        }
+    }
+
+    &__text {
+        margin-left: 5%;
+        font-weight: 600;
+        min-width: 180px;
+        color: lighten(#000, 10%);
+        width: 200px;
+        min-width: max-content;
+        @media screen and (max-width: 360px) {
+            margin-left: 10px;
+            font-size: 0.9rem;
+        }
+    }
+}
