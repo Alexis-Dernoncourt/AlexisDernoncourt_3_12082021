@@ -26,7 +26,7 @@
   margin: 30px 0;
   border-radius: 50px;
   background: linear-gradient(170deg, #ff79da 0%, #9356dc 100%);
-  box-shadow: 0px 2px 7px #ccc;
+  box-shadow: 0px 2px 7px #cacaca;
   color: #fff;
   font-weight: 500;
   text-decoration: none;
@@ -34,7 +34,7 @@
 
 .btn:hover {
   background: linear-gradient(170deg, #a16be0 0%, #ff93e1 100%);
-  box-shadow: 0px 6px 10px #b4b4b4;
+  box-shadow: 0px 6px 10px #b0b0b0;
   font-weight: 600;
 }
 
@@ -168,7 +168,7 @@ a {
   flex-direction: initial;
   padding: 20px 0 10px 0;
   background-color: #fff;
-  box-shadow: 0 2px 5px #ccc;
+  box-shadow: 0 2px 5px #d7d7d7;
   z-index: 100;
   position: relative;
 }
@@ -251,7 +251,7 @@ a {
 .functioningContainer {
   background-color: #fff;
   padding: 50px 20px;
-  width: 100vw;
+  width: 100%;
 }
 @media screen and (min-width: 1200px) {
   .functioningContainer__mainTitle {
@@ -374,7 +374,7 @@ a {
 .restaurantsContainer__card {
   border-radius: 10px;
   margin: 20px 0;
-  box-shadow: 0px 0px 10px #ccc;
+  box-shadow: 0px 0px 10px #d7d7d7;
   position: relative;
   transition: transform 0.1s ease-in-out;
 }
@@ -547,7 +547,7 @@ a {
     margin-top: 40vh;
     padding: 30px 5vw;
     border-radius: 30px;
-    box-shadow: 0 0 15px #787878;
+    box-shadow: 0 0 15px #d7d7d7;
     margin-bottom: 50px;
   }
 }
