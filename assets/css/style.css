@@ -1,5 +1,5 @@
 @charset "UTF-8";
-.btn__homePlainLikeBtn, .btn__homeEmptyLikeBtn, .btn__plainLikeBtn, .btn__emptyLikeBtn {
+.btn__plainLikeBtn, .btn__homePlainLikeBtn, .btn__emptyLikeBtn, .btn__homeEmptyLikeBtn {
   align-items: center;
   justify-content: center;
   flex-direction: initial;
@@ -8,6 +8,13 @@
   font-size: 1.5rem;
   cursor: pointer;
   opacity: 1;
+}
+
+.btn__homePlainLikeBtn, .btn__homeEmptyLikeBtn {
+  position: absolute;
+  right: 15px;
+  bottom: 5%;
+  height: 15%;
 }
 
 .btn, .btn:hover {
@@ -31,7 +38,7 @@
   font-weight: 600;
 }
 
-.menuContainer .menuItem:hover::before, .menuContainer .menuItem:active::before, .menuContainer .menuItem::before, .menuContainer .menuItem__price, .menuContainer .menuItem, .menuContainer__mainTitleContainer, .menuContainer__contentContainer, .footerContainer, .restaurantsContainer__card a, .functioningContainer__content, .functioningContainer__circle, .functioningContainer .fas::before, .functioningContainer__steps, .functioningContainer__cardsContainer, .exploreContainer, .searchForm form label span, .searchForm form, .searchForm, .headerContainer__backToHome, .headerContainer, .animLoaderContainer, .loader, body, .btn__homePlainLikeBtn, .btn__homeEmptyLikeBtn, .btn__plainLikeBtn, .btn__emptyLikeBtn, .btn, .btn:hover {
+.menuContainer .menuItem:hover::before, .menuContainer .menuItem:active::before, .menuContainer .menuItem::before, .menuContainer .menuItem__price, .menuContainer .menuItem, .menuContainer__mainTitleContainer, .menuContainer__contentContainer, .footerContainer, .restaurantsContainer__card a, .functioningContainer__content, .functioningContainer__circle, .functioningContainer .fas::before, .functioningContainer__steps, .functioningContainer__cardsContainer, .exploreContainer, .searchForm form label span, .searchForm form, .searchForm, .headerContainer__backToHome, .headerContainer, .animLoaderContainer, .loader, body, .btn__plainLikeBtn, .btn__homePlainLikeBtn, .btn__emptyLikeBtn, .btn__homeEmptyLikeBtn, .btn, .btn:hover {
   display: flex;
 }
 
@@ -56,7 +63,7 @@ body {
   visibility: hidden;
   position: absolute;
   z-index: 20;
-  background: #f6f6f6;
+  background: rgba(246, 246, 246, 0.9);
   width: 100vw;
   align-items: unset;
   justify-content: center;
@@ -75,31 +82,23 @@ body {
   border-radius: 50%;
 }
 
-.animLoading {
+.animLoading, .animLoading3, .animLoading2 {
   position: absolute;
   background: #a16be0;
   border-radius: 50%;
   width: 10px;
   height: 10px;
-  animation: turnTheLoaderBullet1 0.4s ease 3;
+  animation: moveTheLoaderBullet1 0.5s linear 5;
 }
 
 .animLoading2 {
-  position: absolute;
-  background-color: #ff79da;
-  border-radius: 50px;
-  width: 10px;
-  height: 10px;
-  animation: turnTheLoaderBullet2 0.8s ease 3;
+  background: #ff79da;
+  animation: moveTheLoaderBullet2 0.5s linear 5;
 }
 
 .animLoading3 {
-  position: absolute;
-  background-color: #9356dc;
-  border-radius: 50px;
-  width: 10px;
-  height: 10px;
-  animation: turnTheLoaderBullet3 0.6s ease 3;
+  background: #9356dc;
+  animation: moveTheLoaderBullet3 0.5s linear 5;
 }
 
 a {
@@ -113,57 +112,31 @@ a {
 .btn:hover {
   transition: all 0.2s ease-in-out;
 }
-.btn__emptyLikeBtn {
+.btn__emptyLikeBtn, .btn__homeEmptyLikeBtn {
   background-color: #f6f6f6;
-  z-index: 3;
-  transition: all 0.1s ease-in-out;
+  z-index: 2;
 }
-.btn__emptyLikeBtn:hover, .btn__emptyLikeBtn:active {
-  transition: all 0.1s ease-in-out;
-  opacity: 0;
-}
-.btn__plainLikeBtn {
-  background: linear-gradient(170deg, #a16be0 0%, #ff93e1 100%);
+.btn__plainLikeBtn, .btn__homePlainLikeBtn {
+  background: #f6f6f6;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
-  z-index: 2;
-}
-.btn__homeEmptyLikeBtn {
-  position: absolute;
-  background-color: #f6f6f6;
-  right: 15px;
-  bottom: 5%;
-  z-index: 2;
-  height: 15%;
-  transition: all 0.1s ease-in-out;
-}
-.btn__homeEmptyLikeBtn:hover, .btn__homeEmptyLikeBtn:active {
-  transition: all 0.1s ease-in-out;
-}
-.btn__homePlainLikeBtn {
-  position: absolute;
-  right: 15px;
-  height: 15%;
-  background: #fff;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-  bottom: 5%;
   z-index: 3;
   transform: scale(0.4);
   transition: all 0.2s;
 }
-.btn__homePlainLikeBtn:hover, .btn__homePlainLikeBtn:active {
-  transform: scale(1.1);
+.btn__plainLikeBtn:hover, .btn__homePlainLikeBtn:hover, .btn__plainLikeBtn:active, .btn__homePlainLikeBtn:active {
+  transform: scale(1.15);
+  right: -1px;
   background: linear-gradient(170deg, #a16be0 0%, #ff93e1 100%);
-  background-clip: text;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: all 0.2s;
+}
+.btn__homePlainLikeBtn:hover, .btn__homePlainLikeBtn:active {
+  right: 15px;
 }
 .btn__menus {
   position: absolute;
@@ -710,46 +683,37 @@ a {
     height: 100%;
   }
 }
-@keyframes turnTheLoaderBullet1 {
+@keyframes moveTheLoaderBullet1 {
   0% {
     left: 0;
   }
-  34% {
+  50% {
     top: 0;
   }
-  68% {
-    right: 0;
-  }
   100% {
-    bottom: 0;
+    right: 0;
   }
 }
-@keyframes turnTheLoaderBullet2 {
+@keyframes moveTheLoaderBullet2 {
   0% {
-    right: 0;
-  }
-  34% {
     top: 0;
   }
-  68% {
-    left: 0;
+  50% {
+    right: 0;
   }
   100% {
-    bottom: 0;
+    left: 0;
   }
 }
-@keyframes turnTheLoaderBullet3 {
+@keyframes moveTheLoaderBullet3 {
   0% {
     right: 0;
   }
-  34% {
-    top: 0;
-  }
-  68% {
+  50% {
     left: 0;
   }
   100% {
-    bottom: 0;
+    top: 0;
   }
 }
 @keyframes apparitionAnim {

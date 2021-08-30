@@ -47,6 +47,13 @@ $card-radius: 20px;
     opacity: 1;
 }
 
+%likeBtnHomePosition {
+    position: absolute;
+    right: 15px;
+    bottom: 5%;
+    height: 15%;
+}
+
 %btnColor {
     @include flexMid(center,center,initial);
     height: auto;
@@ -94,7 +101,7 @@ body {
     visibility: hidden;
     position: absolute;
     z-index: 20;
-    background: rgb(246, 246, 246);
+    background: rgba(246, 246, 246, 0.9);
     width: 100vw;
     @include flexMid(unset,center,row);
     animation: displayLoader 2s;
@@ -114,23 +121,17 @@ body {
     border-radius: 50%;
     width: 10px;
     height: 10px;
-    animation: turnTheLoaderBullet1 0.4s ease 3;
+    animation: moveTheLoaderBullet1 0.5s linear 5;
 }
 .animLoading2 {
-    position: absolute;
-    background-color: $secondary-color;
-    border-radius: 50px;
-    width: 10px;
-    height: 10px;
-    animation: turnTheLoaderBullet2 0.8s ease 3;
+    @extend .animLoading;
+    background: $secondary-color;
+    animation: moveTheLoaderBullet2 0.5s linear 5;
 }
 .animLoading3 {
-    position: absolute;
-    background-color: $primary-color;
-    border-radius: 50px;
-    width: 10px;
-    height: 10px;
-    animation: turnTheLoaderBullet3 0.6s ease 3;
+    @extend .animLoading;
+    background: $primary-color;
+    animation: moveTheLoaderBullet3 0.5s linear 5;
 }
 
 a {
@@ -148,58 +149,37 @@ a {
     &__emptyLikeBtn {
         @extend %likeBtn;
         background-color: #f6f6f6;
-        z-index: 3;
-        @include hoverAnim();
-        &:hover, &:active {
-            @include hoverAnim();
-            opacity: 0;
-        }
+        z-index: 2;
     }
     &__plainLikeBtn {
         @extend %likeBtn;
-        background: $btnHoverColor;
+        background: #f6f6f6;
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         color: transparent;
-        z-index: 2;
-    }
-    &__homeEmptyLikeBtn {
-        @extend %likeBtn;
-        position: absolute;
-        background-color: #f6f6f6;
-        right: 15px;
-        bottom: 5%;
-        z-index: 2;
-        height: 15%;
-        @include hoverAnim();
-        &:hover, &:active {
-            @include hoverAnim();
-            //opacity: 0;
-        }
-    }
-    &__homePlainLikeBtn {
-        @extend %likeBtn;
-        position: absolute;
-        right: 15px;
-        height: 15%;
-        background: #fff;
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        color: transparent;
-        bottom: 5%;
         z-index: 3;
         transform: scale(0.4);
         transition: all .2s;
         &:hover, &:active {
-            transform: scale(1.1);
+            transform: scale(1.15);
+            right: -1px;
             background: $btnHoverColor;
-            background-clip: text;
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             transition: all .2s;
+        }
+    }
+    &__homeEmptyLikeBtn {
+        @extend .btn__emptyLikeBtn;
+        @extend %likeBtnHomePosition;
+    }
+    &__homePlainLikeBtn {
+        @extend .btn__plainLikeBtn;
+        @extend %likeBtnHomePosition;
+        &:hover, &:active {
+            right: 15px;
         }
     }
     &__menus {
@@ -701,46 +681,37 @@ a {
     }
 }
 
-@keyframes turnTheLoaderBullet1 {
+@keyframes moveTheLoaderBullet1 {
     0% {
         left: 0;
     }
-    34% {
+    50% {
         top: 0;
     }
-    68% {
-        right: 0;
-    }
     100% {
-        bottom: 0;
+        right: 0;
     }
 }
-@keyframes turnTheLoaderBullet2 {
+@keyframes moveTheLoaderBullet2 {
     0% {
-        right: 0;
-    }
-    34% {
-       top: 0;
-    }
-    68% {
-        left: 0;
-    }
-    100% {
-        bottom: 0;
-    }
-}
-@keyframes turnTheLoaderBullet3 {
-    0% {
-        right: 0;
-    }
-    34% {
         top: 0;
     }
-    68% {
+    50% {
+       right: 0;
+    }
+    100% {
+        left: 0;
+    }
+}
+@keyframes moveTheLoaderBullet3 {
+    0% {
+        right: 0;
+    }
+    50% {
         left: 0;
     }
     100% {
-        bottom: 0;
+        top: 0;
     }
 }
 
