@@ -1,10 +1,11 @@
 {
   "name": "ohmyfood_p3_ocr",
   "version": "1.0.0",
-  "description": "Projet 2 formation OCR",
+  "description": "Projet 3 formation OCR",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "sass": "sass --watch assets/scss/style.scss:assets/css/style.css",
+    "prefix": "postcss assets/css/style.css --use autoprefixer -d assets/css/prefixed/"
   },
   "repository": {
     "type": "git",
@@ -12,10 +13,11 @@
   },
   "author": "Alexis Dernoncourt",
   "license": "ISC",
+  "browserslist": "last 4 versions",
   "bugs": {
     "url": "https://github.com/Alexis-Dernoncourt/https---github.com-Alexis-Dernoncourt-AlexisDernoncourt_3_12082021/issues"
   },
-  "homepage": "https://github.com/Alexis-Dernoncourt/https---github.com-Alexis-Dernoncourt-AlexisDernoncourt_3_12082021#readme",
+  "homepage": "https://github.com/Alexis-Dernoncourt/https---github.com-Alexis-Dernoncourt-AlexisDernoncourt_3_12082021",
   "dependencies": {
     "sass": "^1.38.0"
   }

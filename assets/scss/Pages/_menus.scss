@@ -192,7 +192,7 @@
 }
 @keyframes rotateInCheck {
     from {
-        transform: rotate();
+        transform: rotate(0deg);
         right: -60px;
     }
     to {

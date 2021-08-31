@@ -49,6 +49,7 @@
         background-color: $primary-color;
         border-radius: 50%;
         color: #fff;
+        font-family: $secondary-font;
         font-size: 0.8rem;
         @include flexMid(center,center,initial);
         position: absolute;
@@ -74,6 +75,7 @@
 
     &__text {
         margin-left: 5%;
+        font-family: $secondary-font;
         font-weight: 600;
         min-width: 180px;
         color: lighten(#000, 10%);

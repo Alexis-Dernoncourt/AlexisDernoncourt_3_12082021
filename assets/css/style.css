@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -50,17 +49,6 @@ hr {
   height: 0;
   /* 1 */
   overflow: visible;
-  /* 2 */
-}
-
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
-pre {
-  font-family: monospace, monospace;
-  /* 1 */
-  font-size: 1em;
   /* 2 */
 }
 
@@ -746,6 +734,7 @@ a {
   background-color: #9356dc;
   border-radius: 50%;
   color: #fff;
+  font-family: "Roboto", sans-serif;
   font-size: 0.8rem;
   align-items: center;
   justify-content: center;
@@ -774,6 +763,7 @@ a {
 }
 .functioningContainer__text {
   margin-left: 5%;
+  font-family: "Roboto", sans-serif;
   font-weight: 600;
   min-width: 180px;
   color: #1a1a1a;
@@ -998,7 +988,7 @@ a {
   padding: 0 20px 12px 5px;
 }
 .menuContainer .menuItem::before {
-  content: "";
+  content: "\f058";
   font-family: "Font Awesome 5 Free";
   color: #fff;
   font-size: 1.7rem;
@@ -1022,7 +1012,7 @@ a {
   cursor: pointer;
 }
 .menuContainer .menuItem:hover::before, .menuContainer .menuItem:active::before {
-  content: "";
+  content: "\f058";
   font-family: "Font Awesome 5 Free";
   color: #fff;
   font-size: 1.7rem;
@@ -1067,7 +1057,7 @@ a {
 }
 @keyframes rotateInCheck {
   from {
-    transform: rotate();
+    transform: rotate(0deg);
     right: -60px;
   }
   to {
