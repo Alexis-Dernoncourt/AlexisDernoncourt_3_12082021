@@ -362,7 +362,7 @@ template {
 .btn:hover {
   background: linear-gradient(170deg, #a16be0 0%, #ff93e1 100%);
   box-shadow: 0px 6px 10px #b0b0b0;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .menuContainer .menuItem:hover::before, .menuContainer .menuItem:active::before, .menuContainer .menuItem::before, .menuContainer .menuItem__price, .menuContainer .menuItem, .menuContainer__mainTitleContainer, .menuContainer__contentContainer, .restaurantsContainer__card a, .functioningContainer__content, .functioningContainer__circle, .functioningContainer .fas::before, .functioningContainer__steps, .functioningContainer__cardsContainer, .exploreContainer, .searchForm form label span, .searchForm form, .searchForm, .animLoaderContainer, .loader, .footerContainer, .headerContainer__backToHome, .headerContainer, body, .btn__plainLikeBtn, .btn__homePlainLikeBtn, .btn__emptyLikeBtn, .btn__homeEmptyLikeBtn, .btn, .btn:hover {
@@ -764,7 +764,7 @@ a {
 .functioningContainer__text {
   margin-left: 5%;
   font-family: "Roboto", sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   min-width: 180px;
   color: #1a1a1a;
   width: 200px;
