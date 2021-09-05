@@ -37,3 +37,7 @@
 %flex {
     display: flex;
 }
+
+%moveLoaderBullets {
+    animation: moveTheLoaderBullet 700ms ease-in-out both 5;
+}
