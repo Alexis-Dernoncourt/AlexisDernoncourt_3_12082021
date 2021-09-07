@@ -486,7 +486,6 @@ a {
 }
 .btn__plainLikeBtn, .btn__homePlainLikeBtn {
   background: #f6f6f6;
-  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
@@ -498,7 +497,6 @@ a {
   transform: scale(1.15);
   right: -1px;
   background: linear-gradient(170deg, #a16be0 0%, #ff93e1 100%);
-  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: all 0.2s;
